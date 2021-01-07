@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>评分小星星</title>
+
+<style>
+
+
+
+.clearfix:after {
+
+display: block;
+
+content: "";
+
+clear: both;
+
+height: 0;
+
+}
+
+.fl {
+
+float: left;
+
+}
+
+.fr {
+
+float: right;
+
+}
+
+.scoreEvaluation {
+
+width:50%;
+
+margin-left:25%;
+
+margin-top:2rem;
+
+
+}
+
+.scoringDevice {
+
+width: 300px;
+height: 200px;
+
+white-space: nowrap;
+
+padding-right: 4%;
+
+}
+
+.scoreEvaluation .title {
+
+white-space: nowrap;
+
+font-size: 2em;
+
+font-weight:bold;
+
+margin-bottom: 1.5rem;
+
+color:#ffa500;
+
+/* text-align: left; */
+
+}
+
+.scoringDevice img {
+
+display: block;
+
+width: 15%;
+
+margin-right: 5%;
+
+height: auto;
+
+cursor: pointer;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="scoreEvaluation">
+
+<div class="title"></div>
+
+<div class="scoringDevice clearfix">
+
+<img src="img/star.png" alt="分数" class="scoreImg fl" data-index='1' onclick="scoreFunc(event)" />
+
+<img src="img/star.png" alt="分数" class="scoreImg fl" data-index='2' onclick="scoreFunc(event)" />
+
+<img src="img/star.png" alt="分数" class="scoreImg fl" data-index='3' onclick="scoreFunc(event)" />
+
+<img src="img/star.png" alt="分数" class="scoreImg fl" data-index='4' onclick="scoreFunc(event)" />
+
+<img src="img/star.png" alt="分数" class="scoreImg fl" data-index='5' onclick="scoreFunc(event)" />
+
+</div>
+
+</div>
+
+<script>
+
+
+
+ScoreBl = true;
+
+scoreI = null;
+
+scoreImgs = [];
+
+
+
+function scoreFunc(event) {
+
+if (ScoreBl) {
+
+scoreImgs = document.getElementsByClassName('scoreImg');
+
+}
+
+var e = event || window.event;
+
+var target = e.target || e.srcElement;
+
+var x = target.getAttribute('data-index');
+
+
+
+var nowI = parseInt(x, 10);
+
+var i;
+
+if (nowI != scoreI) {
+
+scoreI = nowI;
+
+for (i = 0, len = scoreImgs.length; i < len; i++) {
+
+scoreImgs[i].src = "img/star.png";
+
+}
+
+for (i = 0; i < nowI; i++) {
+
+scoreImgs[i].src = "img/light.png";
+
+}
+
+} else {
+
+scoreI = 0;
+
+for (i = 0, len = scoreImgs.length; i < len; i++) {
+
+scoreImgs[i].src = "img/star.png";
+
+}
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>  

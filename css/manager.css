@@ -1,0 +1,57 @@
+html, body {
+    height: 100%;
+    /*外層高度100%*/
+    margin: 0;
+}
+
+.wrapper {
+    min-height: 100%;
+    /*外層高度100%*/
+    margin-bottom: -50px;
+    /*隨footer高度需做調整*/
+}
+
+.content {
+    align-items: center;
+    padding-bottom: 50px;
+    /*避免文字超出瀏覽器時，內容區塊不會和footer打架*/
+}
+
+.footer {
+    height: 50px;
+    /*設定footer本身高度*/
+    background-color: red;
+}
+
+table, td {
+    border: 1px solid #333;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+thead, tfoot {
+    background-color: #333;
+    color: #fff;
+}
+
+.insert{
+    color: white;
+    background-color: rgb(129, 167, 218);
+    border-radius: 1rem;
+    border-style: none;
+    height: 3rem;
+    width: 8rem;
+}
+
+button{
+    color: white;
+    background-color: rgb(129, 167, 218);
+    border-radius: 1rem;
+    border-style: none;
+    height: 3rem;
+    width: 5rem;
+}
+
+button:hover{
+    background-color: rgb(83, 139, 211);
+}

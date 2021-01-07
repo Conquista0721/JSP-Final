@@ -1,0 +1,146 @@
+
+
+.bg{
+    background-color: #fdf0c4ab;
+    margin: 0%;
+    font-family: 'Noto Sans TC',sans-serif;
+}
+
+.input{
+    border:2px rgba(69, 48, 104, 0.623) solid;
+cursor:pointer;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+font-size: 23px;
+width: 200px;
+background-color: #afecff59;
+}
+
+
+#menu{
+    background-color: #f7a992;
+    font-family: 'Noto Sans TC',sans-serif;
+
+    color: #4c364d;
+}
+
+
+    .box{
+        border-radius: 10%;
+        background: #82a0c2;
+        position: fixed;
+        right:50px;
+        bottom: 30px;
+      z-index: 2;
+    }
+    
+    .box a{
+        display: block;
+        width: 60px;
+        height: 50px;
+        padding:15px 15px;
+        font-size: 30px;
+        text-decoration: none;
+        color:rgb(241, 255, 164);
+    }
+    
+    .img1{
+        height:100px;
+        width: 100px;
+        float: left;
+        padding-bottom: 10px;
+        padding-left: 50px;
+    }
+    
+    .bgg{
+        padding: 20px;
+        background-color: #f7a992 ;
+        font-family: 'Noto Sans TC',sans-serif;
+        font-size: 20px;
+    }
+
+
+
+
+    ul {
+
+        padding:0px;
+        list-style: none;
+
+    }
+
+    ul.drop-down-menu {
+ 
+        display: inline-block;
+        font-family: 'Open Sans', Arial, sans-serif;
+        font-size: 30px;
+    }
+
+    ul.drop-down-menu li {
+        position: relative;
+        white-space: nowrap;
+    }
+
+    ul.drop-down-menu > li:last-child {
+        border-right: none;
+    }
+
+    ul.drop-down-menu > li {
+        float: left;
+    }
+
+     ul.drop-down-menu a {
+ display: block;
+    width: 250px;
+    height: 40px;
+    font-size: 20px;
+    color: #4c364d;
+    text-align: center;
+    text-decoration: none;
+
+    }
+    ul.drop-down-menu a:hover {
+        background-color:#ffd0cee1;
+        color: #fff;
+    }
+    ul.drop-down-menu li:hover > a {
+        background-color:#424f5e;
+        color: #fff;
+    }
+
+    ul.drop-down-menu ul {
+        position: absolute;
+        z-index: 99;
+        left: -1px;
+        top: 100%;
+       min-width: 180px;
+       background-color:#82a0c2;
+    }
+
+    ul.drop-down-menu ul li {
+
+    }
+
+    ul.drop-down-menu ul li:last-child {
+        border-bottom: none;
+    }
+
+    ul.drop-down-menu ul ul {
+        z-index: 999;
+        top: 10px;
+        left: 90%;
+    }
+
+    ul.drop-down-menu ul {
+        display: none;
+    }
+
+    ul.drop-down-menu li:hover > ul {
+        display: block;
+    }
+
+
+
+
+
+    

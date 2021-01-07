@@ -1,0 +1,187 @@
+.b{
+    width: 500px;
+    height: 500px;
+    border: #82a0c285;
+    border-color:#82a0c285 ;
+    padding: 30px;
+    font-size: 20px;
+}
+
+.pc{
+    height: 300px;
+    width: 300px;
+
+}
+.pc2{
+    height: 60px;
+    width: 100px;
+    float: left;
+}
+.pc3{
+    height: 60px;
+    width: 100px;
+}
+
+.pc4{
+    height: 200px;
+    width: 400px;
+}
+
+.pc5{
+    height: 150px;
+    width: 250px;
+
+}
+
+.pc6{
+    height: 150px;
+    width: 250px;
+    padding-left: 150px;
+}
+
+.span2{
+    height: 200px;
+    width: 700px;
+    background-color: #90b4dd98;
+  margin-left: 250px;
+
+
+}
+
+.item2{
+    width: 200px;
+    height: 200px;
+    float: left;
+}
+
+.item3{
+    font-size: 30px;
+}
+
+.item4{
+    font-size: 25px;
+}
+
+.item5{
+    width: 150px;
+    height: 40px;
+}
+
+.span3{
+    height: 200px;
+    width: 700px;
+    background-color: #bfdeff65;
+    margin-left: 250px;}
+
+.buttt{
+    border: none;
+    background-color: #fefeff00;
+}
+
+.bg{
+    background-color: #fdf0c4;
+    margin: 0%;
+      font-family: 'Noto Sans TC',sans-serif;
+}
+
+.word{
+padding-left: 800px;
+    font-size: 25px;
+}
+
+
+.word1{
+ padding-left: 200px;
+        font-size: 25px;
+     
+   
+    }
+
+
+    .bg{
+        background-color: #fdf0c4;
+        margin: 0%;
+        font-family: 'Noto Sans TC',sans-serif;
+    }
+
+
+    [class*="iconicfill-"]:before {
+        font-family: 'IconicFill', sans-serif;
+      }
+      
+      .wrap{width:300px;}
+      .center{
+       top:50%;
+       transform:translateY(-50%);
+       position:relative;
+       margin:auto;}
+      
+      input{
+        display:block;
+          width: 300px;
+          padding: 15px 0 15px 12px;
+          font-family: "Arvo";
+          font-weight: 400;
+          color: #377d6a00;
+          background: rgba(0,0,0,0.3);
+          border: none;
+          outline: none;
+          color: rgb(168, 119, 119);
+          text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+          border: 1px solid rgba(0, 0, 0, 0);
+          border-radius: 4px;
+          box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px  1px rgba(255,255,255,0.2);
+          text-indent: 60px;
+          transition: all .3s ease-in-out;
+          position: relative;
+        
+          font-size: 13px;
+      }
+      input:focus{
+          text-indent: 12px;
+          box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2);
+      }
+      
+      label{
+          display: block;
+          position: static;
+          margin: 0;
+          padding: 0;
+          color:rgba(58, 31, 31, 0);
+          font-family: 'Arvo';
+          font-size: 16px;
+      }
+      
+      .wrap-label{
+        width: 300px;
+        height: 34px;
+        position: relative;
+        padding: 0;
+        margin: 0;
+        bottom: -15px;
+        overflow: hidden;}
+      
+      .iconicfill-pen-alt2{
+          position: absolute;
+          left: 10px;
+          color: rgb(146, 120, 120);
+          font-size:19px;
+          opacity: 1;
+          top: -2px;
+          transform:translateX(-100px);
+      }
+
+      .video{
+          z-index: 1;
+          position: absolute;
+margin-left: 700px;
+padding-top: 250px;
+      }
+
+
+      .video2{
+        z-index: 1;
+        position: absolute;
+        margin-left: 300px;
+        margin-top: 300px;
+      }
