@@ -25,10 +25,10 @@
 			}
 			else
 			{
-			sql="INSERT INTO member(m_account,m_password,m_level,m_name,m_head) values('"+acc+"','"+pas+"','"+"0"+"','"+acc+"','"+"一般會員"+"');";
-			con.createStatement().execute(sql); 
-			out.write("<script language=javascript>alert('註冊成功');</script>");
-			response.setHeader("refresh","0;URL=index.jsp");
+				sql="INSERT INTO member(m_account,m_password,m_level,m_name,m_head) values('"+acc+"','"+pas+"','"+"0"+"','"+acc+"','"+"一般會員"+"');";
+				con.createStatement().execute(sql);
+				out.write("<script language=javascript>alert('註冊成功');</script>");
+				response.setHeader("refresh","0;URL=index.jsp");
 		    }
 		}
 	%>

@@ -60,18 +60,20 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <img src="img/line.png">
     </div>
-    <div class="b"> <center>
-        <img src="img/login.png" class="pc"><br><br><br>
-       
-        帳號:<br><br><input type="text" placeholder="輸入帳號" class="input"><br>
-    
-        密碼:<br><br><input type="password" placeholder="輸入密碼" class="input"><br>
+	<form action="tologin.jsp" method="post">
+		<div class="b"> <center>
+			<img src="img/login.png" class="pc"><br><br><br>
+		   
+			帳號:<br><br><input type="text" placeholder="輸入帳號" class="input" name="acc"><br>
+		
+			密碼:<br><br><input type="password" placeholder="輸入密碼" class="input" name="psd"><br>
 
-<button class="buttt"><img src="img/登入.png" class="pc2"></button><button class="buttt"><img src="img/註冊.png" class="pc2">
-</button><button class="buttt"><img src="img/忘記密碼.png" class="pc3"></button>
-</center>
-    </div>
-
+			<button class="buttt" type="submit"><img src="img/登入.png" class="pc2"></button>
+			<button class="buttt"><img src="img/註冊.png" class="pc2"></button>
+			<button class="buttt"><img src="img/忘記密碼.png" class="pc3"></button>
+			</center>
+		</div>
+	</form>
    
     <br>
     <br>
