@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"%>
 <%@page import="java.util.*,java.io.*"%>
+<%@include file="getDB.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,28 +44,86 @@ a
   height: 3.5rem;
  }
 </style>
+<style type="text/css">
+    @import"css/home.css";
+    @import"css/div2.css";
+    @import"css/div1.css";
+    @import "css/menu.css";
+    @import "css/container projects.css";
+    @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap");
+    </style>
+<script src="js/home.js"></script>
 </head>
-<body>
+<body class="bg">
+<div id="menu"> 
+            <a href="index.jsp"><img src="img/商標.png" class="img1"></a>
+            <center>
+        <ul class="drop-down-menu">
+            <li><a href="#">ABOUT US</a>
+                <ul>
+                    <li><a href="about us.jsp">關於我們</a></li>
+                    <li><a href="about us.jsp">常見問題</a></li>
+                </ul>
+            </li>
+    
+            <li><a href="#">MENU</a>
+                <ul>
+                    <li><a href="commodity.jsp">熱門商品</a></li>
+                    <li><a href="commodity.jsp">休閒鞋款</a></li>
+                    <li><a href="commodity.jsp">籃球鞋款</a></li>
+                    <li><a href="commodity.jsp">慢跑鞋款</a></li>
+                </ul>
+            </li>
+    
+            <li><a href="#">MEMBER</a>
+                <ul>
+                    <li><a href="personal information.jsp">個人資料</a></li>
+                </ul>
+            </li>
+        </ul>
+       </center> 
+         </div>
 <center  style="padding:10%;"><table border="1" class="out">
 	<tr>
 		<td><center><a href="back_index.jsp">管理者介面</a></center></td>
 		<td colspan="2" style="width: 70rem"><center>訂單管理</center></td>
 	</tr>
 	<tr>
-		<td><a href="back_member.jsp">會員管理</a></td>
+		<td><a href="bk_member.jsp">會員管理</a></td>
 		<td colspan="2" rowspan="4" style="width: 70rem">
 			<center><table border="1" class="in">
 				<tr>
 					<td>訂單編號</td>
-          <td>商品名稱</td>
-					<td>訂單數量</td>
+					<td>下訂時間</td>
+				    <td>商品編號</td>
 					<td>會員帳號</td>
+					<td>訂單數量</td>
+					<td>訂單電話</td>
 					<td>訂單地址</td>
-          <td>訂單電話</td>
-          <td>訂單國家</td>
+					<td>總共金額</td>
 					<td>刪除</td>
 				</tr>
 				 <%
+				  String acc="";
+        String pas="";
+      //session.setAttribute("in",acc);the memory of the logged in account
+        try{
+                Cookie getC[]=request.getCookies();
+                for(int i=0;i<getC.length;i++)
+                {
+                    if(getC[i].getName().equals("getin"))
+                    {
+                        String[] sp=getC[i].getValue().split("-");
+                        acc=sp[0];
+                        pas=sp[1];
+                    }
+                }
+        
+            }
+        catch(Exception e)
+        {
+        
+        }
                                 try{
                                         Cookie getC[]=request.getCookies();
                                         for(int i=0;i<getC.length;i++)
@@ -98,18 +157,19 @@ a
                             %>
                 <form action="write_order.jsp" method="post">
 <%
-                sql="SELECT * FROM list_shopping;";
+                sql="SELECT * FROM shoppinglist;";
 				        ResultSet tmp=con.createStatement().executeQuery(sql);
                 while(tmp.next())
                 {
                   out.println("<tr>");
                   out.println("<td>"+"<textarea name='lid' readonly>"+tmp.getString("l_id")+"</textarea>"+"</td>");
-                  out.println("<td>"+"<textarea name='pname'>"+tmp.getString("product_name")+"</textarea>"+"</td>");
-                  out.println("<td>"+"<textarea name='lnumber'>"+tmp.getString("l_number")+"</textarea>"+"</td>");
+				  out.println("<td>"+"<textarea name='ldate'>"+tmp.getString("date")+"</textarea>"+"</td>");
+				  out.println("<td>"+"<textarea name='pid'>"+tmp.getString("p_id")+"</textarea>"+"</td>");
                   out.println("<td>"+"<textarea name='maccount'>"+tmp.getString("m_account")+"</textarea>"+"</td>");
-                  out.println("<td>"+"<textarea name='laddress'>"+tmp.getString("l_address")+"</textarea>"+"</td>");
-                  out.println("<td>"+"<textarea name='lcellphone'>"+tmp.getString("l_cellphone")+"</textarea>"+"</td>");
-                  out.println("<td>"+"<textarea name='lcountry'>"+tmp.getString("l_country")+"</textarea>"+"</td>");
+                  out.println("<td>"+"<textarea name='lnumber'>"+tmp.getString("l_number")+"</textarea>"+"</td>");
+                  out.println("<td>"+"<textarea name='lphone'>"+tmp.getString("l_phone")+"</textarea>"+"</td>");
+				  out.println("<td>"+"<textarea name='laddress'>"+tmp.getString("l_address")+"</textarea>"+"</td>");
+				  out.println("<td>"+"<textarea name='ltotalprice'>"+tmp.getString("l_totalprice")+"</textarea>"+"</td>");
                   out.println("<td>"+"<a href='del_order.jsp?lid="+tmp.getString("l_id")+"'>"+"刪除"+"</a>"+"</td>");
                   out.println("</tr>");
                 }
@@ -146,13 +206,13 @@ a
 		</td>
 	</tr>
 	<tr>
-		<td><a href="back_order.jsp">訂單管理</a></td>
+		<td><a href="bk_order.jsp">訂單管理</a></td>
 	</tr>
 	<tr>
-		<td><a href="back_product.jsp">商品管理</a></td>
+		<td><a href="bk_product.jsp">商品管理</a></td>
 	</tr>
 	<tr>
-		<td><a href="back_comment.jsp">評論管理</a></td>
+		<td><a href="bk_comment.jsp">評論管理</a></td>
 	</tr>
 </table></center>
 
@@ -161,33 +221,34 @@ a
                   
   <form action="add_order.jsp" method="post">
   <tr>
-  	<td>訂單編號(必填)</td>
-  	<td colspan="2"><textarea style="width: 90%;" name="lid"></textarea></td>
+  <tr>
+    <td>商品編號(必填)</td>
+    <td colspan="2"><textarea style="width: 90%;" name="lid"></textarea></td>
+  </tr>
+   <tr>
+    <td>下定日期(必填)</td>
+    <td colspan="2"><input type="date" style="width: 90%;" name="ldate"></td>
   </tr>
   <tr>
   <tr>
-    <td>商品名稱(必填)</td>
-    <td colspan="2"><textarea style="width: 90%;" name="pname"></textarea></td>
-  </tr>
-  <tr>
-  	<td>訂單數量(必填)</td>
-  	<td colspan="2"><textarea style="width: 90%;" name="lnumber"></textarea></td>
+    <td>商品編號(必填)</td>
+    <td colspan="2"><textarea style="width: 90%;" name="pid"></textarea></td>
   </tr>
   <tr>
   	<td>會員帳號</td>
   	<td colspan="2"><textarea style="width: 90%;" name="maccount"></textarea></td>
   </tr>
+   <tr>
+  	<td>訂單數量</td>
+  	<td colspan="2"><textarea style="width: 90%;" name="lnumber"></textarea></td>
+  </tr>
+   <tr>
+  	<td>訂單電話</td>
+  	<td colspan="2"><textarea style="width: 90%;" name="lphone"></textarea></td>
+  </tr>
     <tr>
   	<td>訂單地址</td>
   	<td colspan="2"><textarea style="width: 90%;" name="laddress"></textarea></td>
-  </tr>
-    <tr>
-  	<td>訂單電話</td>
-  	<td colspan="2"><textarea style="width: 90%;" name="lcellphone"></textarea></td>
-  </tr>
-  <tr>
-    <td>訂單國家</td>
-    <td colspan="2"><textarea style="width: 90%;" name="lcountry"></textarea></td>
   </tr>
   <tr>
   <td colspan="3">

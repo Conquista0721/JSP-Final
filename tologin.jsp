@@ -48,7 +48,7 @@
 				response.addCookie(ck);
 				session.setAttribute("in",acc);
 				out.write("<script language=javascript>alert('進入管理員介面');</script>");
-				response.setHeader("refresh","0;URL=index.jsp");
+				response.setHeader("refresh","0;URL=bk_index.jsp");
 			}
 		    else
 			{

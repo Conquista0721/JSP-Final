@@ -7,6 +7,7 @@
 	<meta charset="UTF-8">
 	<title>後台介面</title>
 <style type="text/css" media="screen">
+
 td
  {
  	text-align:center;
@@ -26,8 +27,48 @@ a
 	height: 5rem;
  }
 </style>
+
+<style type="text/css">
+    @import"css/home.css";
+    @import"css/div2.css";
+    @import"css/div1.css";
+    @import "css/menu.css";
+    @import "css/container projects.css";
+    @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap");
+    </style>
+<script src="js/home.js"></script>
+
 </head>
-<body>
+<body class="bg">
+
+        <div id="menu"> 
+            <a href="index.jsp"><img src="img/商標.png" class="img1"></a>
+            <center>
+        <ul class="drop-down-menu">
+            <li><a href="#">ABOUT US</a>
+                <ul>
+                    <li><a href="about us.jsp">關於我們</a></li>
+                    <li><a href="about us.jsp">常見問題</a></li>
+                </ul>
+            </li>
+    
+            <li><a href="#">MENU</a>
+                <ul>
+                    <li><a href="commodity.jsp">熱門商品</a></li>
+                    <li><a href="commodity.jsp">休閒鞋款</a></li>
+                    <li><a href="commodity.jsp">籃球鞋款</a></li>
+                    <li><a href="commodity.jsp">慢跑鞋款</a></li>
+                </ul>
+            </li>
+    
+            <li><a href="#">MEMBER</a>
+                <ul>
+                    <li><a href="personal information.jsp">個人資料</a></li>
+                </ul>
+            </li>
+        </ul>
+       </center> 
+         </div>
 	 <%
 		String acc="";
         String pas="";
@@ -64,23 +105,23 @@ a
                             %>
 <center style="padding:10%;"><table border="1" class="out">
 	<tr>
-		<td><center><a href="back_index.jsp">管理者介面</a></center></td>
+		<td><center><a href="bk_index.jsp">管理者介面</a></center></td>
 		<td colspan="2" style="width: 70rem"><center>後台首頁</center></td>
 	</tr>
 	<tr>
-		<td><a href="back_member.jsp">會員管理</a></td>
+		<td><a href="bk_member.jsp">會員管理</a></td>
 		<td colspan="2" rowspan="4" style="width: 70rem">
 			<center><span><a href="index.jsp">回到前台首頁</a></span></center>
 		</td>
 	</tr>
 	<tr>
-		<td><a href="back_order.jsp">訂單管理</a></td>
+		<td><a href="bk_order.jsp">訂單管理</a></td>
 	</tr>
 	<tr>
-		<td><a href="back_product.jsp">商品管理</a></td>
+		<td><a href="bk_product.jsp">商品管理</a></td>
 	</tr>
 	<tr>
-		<td><a href="back_comment.jsp">評論管理</a></td>
+		<td><a href="bk_comment.jsp">評論管理</a></td>
 	</tr>
 </table></center>
 

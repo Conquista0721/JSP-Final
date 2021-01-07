@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"%>
 <%@page import="java.util.*,java.io.*"%>
+<%@include file="getDB.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,31 +44,88 @@ a
   height: 3rem;
  }
 </style>
+
+<style type="text/css">
+    @import"css/home.css";
+    @import"css/div2.css";
+    @import"css/div1.css";
+    @import "css/menu.css";
+    @import "css/container projects.css";
+    @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap");
+    </style>
+<script src="js/home.js"></script>
 </head>
-<body>
+<body class="bg">
+<div id="menu"> 
+            <a href="index.jsp"><img src="img/商標.png" class="img1"></a>
+            <center>
+        <ul class="drop-down-menu">
+            <li><a href="#">ABOUT US</a>
+                <ul>
+                    <li><a href="about us.jsp">關於我們</a></li>
+                    <li><a href="about us.jsp">常見問題</a></li>
+                </ul>
+            </li>
+    
+            <li><a href="#">MENU</a>
+                <ul>
+                    <li><a href="commodity.jsp">熱門商品</a></li>
+                    <li><a href="commodity.jsp">休閒鞋款</a></li>
+                    <li><a href="commodity.jsp">籃球鞋款</a></li>
+                    <li><a href="commodity.jsp">慢跑鞋款</a></li>
+                </ul>
+            </li>
+    
+            <li><a href="#">MEMBER</a>
+                <ul>
+                    <li><a href="personal information.jsp">個人資料</a></li>
+                </ul>
+            </li>
+        </ul>
+       </center> 
+         </div>
 <center style="padding:2%; padding-bottom: 10%;padding-top: 10%;"><table border="1" class="out">
 	<tr>
-		<td><center><a href="back_index.jsp">管理者介面</a></center></td>
+		<td><center><a href="bk_index.jsp">管理者介面</a></center></td>
 		<td colspan="2" style="width: 70rem"><center>會員管理</center></td>
 	</tr>
 	<tr>
-		<td><a href="back_member.jsp">會員管理</a></td>
+		<td><a href="bk_member.jsp">會員管理</a></td>
 		<td colspan="2" rowspan="4" style="width: 70rem">
 			<center><table border="1" class="in">
 				<tr>
           <td>序號</td>
 					<td>帳號</td>
 					<td>密碼</td>
-					<td>名字</td>
-					<td>姓氏</td>
-					<td>地址</td>
-					<td>電郵</td>
+					<td>姓名</td>
 					<td>權限</td>
 					<td>稱謂</td>
+					<td>地址</td>
+					<td>電郵</td>
 					<td>電話</td>
 					<td>刪除</td>
 				</tr>
          <%
+		 String acc="";
+        String pas="";
+      //session.setAttribute("in",acc);the memory of the logged in account
+        try{
+                Cookie getC[]=request.getCookies();
+                for(int i=0;i<getC.length;i++)
+                {
+                    if(getC[i].getName().equals("getin"))
+                    {
+                        String[] sp=getC[i].getValue().split("-");
+                        acc=sp[0];
+                        pas=sp[1];
+                    }
+                }
+        
+            }
+        catch(Exception e)
+        {
+        
+        }
                                 try{
                                         Cookie getC[]=request.getCookies();
                                         for(int i=0;i<getC.length;i++)
@@ -109,13 +167,12 @@ a
                   out.println("<td>"+"<textarea name='mid' readonly>"+tmp.getString("m_id")+"</textarea>"+"</td>");
                   out.println("<td name='maccount'>"+tmp.getString("m_account")+"</td>");
                   out.println("<td>"+"<textarea name='mpassword'>"+tmp.getString("m_password")+"</textarea>"+"</td>");
-                  out.println("<td>"+"<textarea name='mfirstname'>"+tmp.getString("m_firstname")+"</textarea>"+"</td>");
-                  out.println("<td>"+"<textarea name='mlastname'>"+tmp.getString("m_lastname")+"</textarea>"+"</td>");
+				  out.println("<td>"+"<textarea name='mname'>"+tmp.getString("m_name")+"</textarea>"+"</td>");
+				  out.println("<td>"+"<textarea name='mlevel'>"+tmp.getString("m_level")+"</textarea>"+"</td>");
+                  out.println("<td>"+"<textarea name='mhead'>"+tmp.getString("m_head")+"</textarea>"+"</td>");
                   out.println("<td>"+"<textarea name='maddress'>"+tmp.getString("m_address")+"</textarea>"+"</td>");
                   out.println("<td>"+"<textarea name='memail'>"+tmp.getString("m_email")+"</textarea>"+"</td>");
-                  out.println("<td>"+"<textarea name='mlevel'>"+tmp.getString("m_level")+"</textarea>"+"</td>");
-                  out.println("<td>"+"<textarea name='mhead'>"+tmp.getString("m_head")+"</textarea>"+"</td>");
-                  out.println("<td>"+"<textarea name='mtel'>"+tmp.getString("m_tel")+"</textarea>"+"</td>");
+                  out.println("<td>"+"<textarea name='mphone'>"+tmp.getString("m_phone")+"</textarea>"+"</td>");
                   out.println("<td>"+"<a href='del_member.jsp?acc="+tmp.getString("m_account")+"'>"+"刪除"+"</a>"+"</td>");
                   out.println("</tr>");
                 }
@@ -145,13 +202,13 @@ a
 		</td>
 	</tr>
 	<tr>
-		<td><a href="back_order.jsp">訂單管理</a></td>
+		<td><a href="bk_order.jsp">訂單管理</a></td>
 	</tr>
 	<tr>
-		<td><a href="back_product.jsp">商品管理</a></td>
+		<td><a href="bk_product.jsp">商品管理</a></td>
 	</tr>
 	<tr>
-		<td><a href="back_comment.jsp">評論管理</a></td>
+		<td><a href="bk_comment.jsp">評論管理</a></td>
 	</tr>
 </table></center>
 
