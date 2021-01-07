@@ -83,24 +83,23 @@
        </center> 
          </div>
 <center>
-   <div class="video2"> 
-    <img src="img/line.png"><br>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/zkzxheV-LpE" frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
-    <img src="img/line.png">
-</div>
-    <div class="word">
-        <img src="img/填寫資料.png" class="pc4">
-        <br>
-   名字: <input type="text" placeholder="輸入名字" class="input">
-    帳號:<input type="text" placeholder="輸入帳號" class="input">
-    密碼:<input type="password" placeholder="輸入密碼" class="input">
-   確認密碼: <input type="password" placeholder="確認密碼" class="input"> 
-   身分證: <input type="text" placeholder="輸入身分證" class="input">
-    手機號碼:<input type="text" placeholder="輸入手機號碼" class="input">
-    E-mail:<input type="text" placeholder="輸入e-mail" class="input">
-    <button class="buttt"><img src="img/註冊.png" class="pc2">
- </div>
+  <div class="video2"> 
+		<img src="img/line.png"><br>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/zkzxheV-LpE" frameborder="0" 
+		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+		<img src="img/line.png">
+	</div>
+	<form action="regis.jsp" method="post">
+		<div class="word">
+			<img src="img/填寫資料.png" class="pc4">
+			<br>
+				
+				帳號:<input type="text" placeholder="輸入帳號" class="input" name="acc">
+				密碼:<input type="password" placeholder="輸入密碼" class="input" name="psd">
+				
+			<button class="buttt" type="submit"><img src="img/註冊.png" class="pc2" onclick="location.href='regis.jsp'">
+		</div>
+	</form>
 </center>
 
 
