@@ -127,7 +127,7 @@
         }
         else if(outlink.equals("2"))
         {
-            out.println("<script>window.open('all_products.jsp','_self')</script>");
+            out.println("<script>window.open('favorite.jsp','_self')</script>");
         }
     }
     catch(Exception e)

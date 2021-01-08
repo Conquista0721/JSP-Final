@@ -24,7 +24,10 @@
 <script src="js/car.js"></script>
 
 <body class="bg">
+ <form action="insertlist2.jsp" method="">
 	<%
+		String amount = request.getParameter("amount");
+        String pid = request.getParameter("pid");
         String acc="";
         String pas="";
 		//session.setAttribute("in",acc);the memory of the logged in account
@@ -48,6 +51,8 @@
 		try{
 			if(acc==null||acc.equals("")||pas==null||pas.equals(""))
 		{
+			 out.write("<script language=javascript>alert('請先登入');</script>");
+             response.setHeader("refresh","0;URL=login.jsp") ;
 	%>
 
 		<div class="box"><a href="#">TOP</a></div>
@@ -85,6 +90,16 @@
 		}
 		else
 		{
+			 sql="SELECT * FROM member WHERE m_account='"+acc+"' and m_password='"+pas+"'";
+             ResultSet ins=con.createStatement().executeQuery(sql);
+             ins.next();
+             if(ins.getString("m_level").equals("1"))
+             {
+                out.write("<script language=javascript>alert('歡迎管理員大大');</script>");
+                response.setHeader("refresh","0;URL=back_index.jsp") ;
+             }
+             else
+             {
 	%>
 		<div class="box"><a href="#">TOP</a></div>
 		<div class="bo"><a href="search.jsp">搜尋</a></div>
@@ -121,7 +136,54 @@
 			</ul>
 			</center> 
 		</div>
-	<%
+		 <%
+                        try{
+                            String[] idd= request.getParameterValues("pid");
+                            String[] nbb= request.getParameterValues("amount");
+                        //如果一次購買5種不同商品 個別不同數量，idd[這裡會是0~4] nbb[也是0~4];陣列取的大小=idd.length
+                        
+                            for(int i=0;i<idd.length;i++) 
+                            {
+                     %>
+                             <input type="hidden" name="pdid" value="<%=idd[i]%>">
+                             <input type="hidden" name="amt" value="<%=nbb[i]%>">
+                             
+                    <%
+							}
+                         }catch(Exception e){
+                         out.write("<script language=javascript>alert('無商品');</script>");
+                         response.setHeader("refresh","0;URL=car.jsp") ;
+                         }
+                         sql="UPDATE shopping_cart SET amount='"+amount+"' WHERE p_id='"+pid+"' AND m_account='"+acc+"'";
+						 con.createStatement().execute(sql);
+                    %>
+					 <%
+                      
+                        sql="SELECT * FROM member WHERE member.m_account='"+acc+"'";
+                        ResultSet list = con.createStatement().executeQuery(sql);
+                        list.next();
+                    %>
+	
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+<center>
+<img src="img/訂購資料.png" class="pc3">
+<div class="word1">
+收件者姓名: <input type="text" placeholder="輸入姓名" class="input" name="oname" value="<%=list.getString("m_name")%>"><br><br>
+手機號碼:<input type="text" placeholder="輸入手機號碼" class="input" name="ophone" value="<%=list.getString("m_phone")%>"><br><br>
+取貨店家:<input type="text" placeholder="輸入取貨店家" class="input" name="oaddress" value="<%=list.getString("m_address")%>"><br><br>
+(請寫全名。ex:全家 中壢復興店。)
+
+</div></center>
+<div><center><button class="butttt" type="submit"><img src="img/訂購.png" class="pc4" onclick="myFunction()"></center> </div>
+
+</form>
+
+	 <%			}
 			}
 		}
 		catch(Exception e)
@@ -148,53 +210,6 @@
 			}
 		}
 	%>
-<br>
-<br>
-<br>
-<br>
-
-<center>
-
-<div class="foot" id="foot">
- <label class="fl select-all"><input type="checkbox" class="check-all check"/> 全選</label>
- <a class="fl delete" id="deleteAll" href="javascript:;">刪除</a>
- <div class="fr closing">結 算</div>
- <div class="fr total">合計：$<span id="priceTotal">000</span></div>
- <div class="fr selected" id="selected">已選商品
-  <span id="selectedTotal">0</span>件
-  <span class="arrow up">︽</span>
-  <span class="arrow down">︾</span>
- </div>
- <div class="selected-view">
-  <div id="selectedViewList" class="clearfix">
-
-  </div>
-  <span class="arrow">◆<span>◆</span></span>
- </div>
-</div></center>
-<script>
-
-</script>
-
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
-</div>
-<center>
-<img src="img/訂購資料.png" class="pc3">
-<div class="word1">
-收件者姓名: <input type="text" placeholder="輸入姓名" class="input"><br><br>
-手機號碼:<input type="text" placeholder="輸入手機號碼" class="input"><br><br>
-取貨店家:<input type="text" placeholder="輸入取貨店家" class="input"><br><br>
-(請寫全名。ex:全家 中壢復興店。)
-
-</div></center>
-<div><center><a href="index.jsp"><button class="butttt"><img src="img/訂購.png" class="pc4" onclick="myFunction()"></a></center> </div>
-
 <div class="bgg"><center>
     <p>瀏覽人數:
 		<%
