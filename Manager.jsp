@@ -25,41 +25,28 @@
     <div id="menu"> 
         <img src="img/商標.png" class="img1">
         <center>
-    <ul class="drop-down-menu">
-        <li><a href="#">ABOUT US</a>
-            <ul>
-                <li><a href="#">關於我們</a></li>
-                <li><a href="#">常見問題</a></li>
-            </ul>
-        </li>
+			<ul class="drop-down-menu">
+				<li><a href="#">ABOUT US</a>
+					<ul>
+						<li><a href="#">關於我們</a></li>
+						<li><a href="#">常見問題</a></li>
+					</ul>
+				</li>
 
-        <li><a href="#">MENU</a>
-            <ul>
-                <li><a href="commodity.jsp">熱門商品</a></li>
-                <li><a href="commodity.jsp">休閒鞋款</a></li>
-                <li><a href="commodity.jsp">籃球鞋款</a></li>
-                <li><a href="commodity.jsp">慢跑鞋款</a></li>
-            </ul>
-        </li>
-
-        <li><a href="#">LOGIN</a>
-            <ul>
-                <li><a href="login.jsp">會員</a></li>
-                <li><a href="register.jsp">非會員</a></li>
-                <li><a href="login.jsp">管理者</a></li>
-            </ul>
-        </li>
-
-        <li><a href="#">MEMBER</a>
-            <ul>
-                <li><a href="personal information.jsp">個人資料</a></li>
-                <li><a href="#">我的收藏</a></li>
-                <li><a href="car.jsp">購物車</a></li>
-            </ul>
-        </li>
-    </ul>
-   </center> 
-     </div>
+				<li><a href="#">MENU</a>
+					<ul>
+						<li><a href="commodity.jsp">熱門商品</a></li>
+						<li><a href="commodity.jsp">休閒鞋款</a></li>
+						<li><a href="commodity.jsp">籃球鞋款</a></li>
+						<li><a href="commodity.jsp">慢跑鞋款</a></li>
+					</ul>
+				</li>
+				<li>		
+						<a href="logout.jsp">登出</a>
+				</li>
+			</ul>
+		</center> 
+    </div>
         <div class="content">
             <table width="50%" style="margin-top: 6rem;margin-bottom: 6rem;">
                 <thead>

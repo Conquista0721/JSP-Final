@@ -18,7 +18,7 @@
         <div id="menu"> 
             <a href="index.jsp"><img src="img/商標.png" class="img1"></a>
             <center>
-        <ul class="drop-down-menu">
+			<ul class="drop-down-menu">
             <li><a href="#">ABOUT US</a>
                 <ul>
                     <li><a href="about us.jsp">關於我們</a></li>
@@ -37,24 +37,15 @@
     
             <li><a href="#">LOGIN</a>
                 <ul>
-                    <li><a href="login.jsp">會員</a></li>
-                    <li><a href="register.jsp">非會員</a></li>
-                    <li><a href="login.jsp">管理者</a></li>
+                    <li><a href="login.jsp">登入</a></li>
+                    <li><a href="register.jsp">註冊</a></li>
                 </ul>
             </li>
-    
-            <li><a href="#">MEMBER</a>
-                <ul>
-                    <li><a href="personal information.jsp">個人資料</a></li>
-                    <li><a href="#">我的收藏</a></li>
-                    <li><a href="car.jsp">購物車</a></li>
-                </ul>
-            </li>
-        </ul>
-       </center> 
-         </div>
+			</ul>
+			</center> 
+        </div>
      
-     <div class="video">
+    <div class="video">
          <img src="img/line.png">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/uBcVc2iFzkU" frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -83,10 +74,10 @@
     <br>
     <br>
     <br>
-<br>
-<br>
-<br>
-<br>
+	<br>
+	<br>
+	<br>
+	<br>
 
     
 <div class="bgg"><center>
@@ -109,6 +100,6 @@
 	</p>
     <p>本網站照片來源皆來自<a href="https://www.adidas.com.tw/" target="_blank"> 愛迪達官網</a></p>
     <script>writeclock()</script>
-          </div></center>
+</div></center>
 </body>
 </html>

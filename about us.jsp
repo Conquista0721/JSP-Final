@@ -14,7 +14,7 @@
 
 
 
-       </style>
+    </style>
 
 <META NAME="GENERATOR" Content="Microsoft Visual Studio 6.0">
     <SCRIPT ID=clientEventHandlersJS LANGUAGE=javascript>
@@ -58,14 +58,73 @@
 <script src="js/about.js"></script>
 </head>
 <body class="bg">
-
-
       
-        <div class="box"><a href="#">TOP</a></div>
-        <div id="menu"> 
+    <%
+        String acc="";
+        String pas="";
+		//session.setAttribute("in",acc);the memory of the logged in account
+        try{
+                Cookie getC[]=request.getCookies();
+                for(int i=0;i<getC.length;i++)
+                {
+                    if(getC[i].getName().equals("getin"))
+                    {
+                        String[] sp=getC[i].getValue().split("-");
+                        acc=sp[0];
+                        pas=sp[1];
+                    }
+                }
+        
+            }
+        catch(Exception e)
+        {
+        
+        }
+		try{
+			if(acc==null||acc.equals("")||pas==null||pas.equals(""))
+		{
+	%>
+
+		<div class="box"><a href="#">TOP</a></div>
+			<div id="menu"> 
+				<a href="index.jsp"><img src="img/商標.png" class="img1"></a>
+				<center>
+				<ul class="drop-down-menu">
+				<li><a href="#">ABOUT US</a>
+					<ul>
+						<li><a href="about us.jsp">關於我們</a></li>
+						<li><a href="about us.jsp">常見問題</a></li>
+					</ul>
+				</li>
+		
+				<li><a href="#">MENU</a>
+					<ul>
+						<li><a href="commodity.jsp">熱門商品</a></li>
+						<li><a href="commodity.jsp">休閒鞋款</a></li>
+						<li><a href="commodity.jsp">籃球鞋款</a></li>
+						<li><a href="commodity.jsp">慢跑鞋款</a></li>
+					</ul>
+				</li>
+		
+				<li><a href="#">LOGIN</a>
+					<ul>
+						<li><a href="login.jsp">登入</a></li>
+						<li><a href="register.jsp">註冊</a></li>
+					</ul>
+				</li>
+				</ul>
+				</center> 
+			</div>
+	<%
+		}
+		else
+		{
+	%>
+		<div class="box"><a href="#">TOP</a></div>
+		<div id="menu"> 
             <a href="index.jsp"><img src="img/商標.png" class="img1"></a>
             <center>
-        <ul class="drop-down-menu">
+			<ul class="drop-down-menu">
             <li><a href="#">ABOUT US</a>
                 <ul>
                     <li><a href="about us.jsp">關於我們</a></li>
@@ -81,35 +140,52 @@
                     <li><a href="commodity.jsp">慢跑鞋款</a></li>
                 </ul>
             </li>
-    
-            <li><a href="#">LOGIN</a>
-                <ul>
-                    <li><a href="login.jsp">會員</a></li>
-                    <li><a href="register.jsp">非會員</a></li>
-                    <li><a href="login.jsp">管理者</a></li>
-                </ul>
-            </li>
-    
-            <li><a href="#">MEMBER</a>
-                <ul>
-                    <li><a href="personal information.jsp">個人資料</a></li>
-                    <li><a href="#">我的收藏</a></li>
-                    <li><a href="car.jsp">購物車</a></li>
-                </ul>
-            </li>
-        </ul>
-       </center> 
-         </div>
-
-
-
-
-
+            
+			<li><a href="#">hello</a>
+				<ul>
+					<li><a href="personal information.jsp">個人資料</a></li>
+					<li><a href="#">我的收藏</a></li>
+					<li><a href="car.jsp">購物車</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="logout.jsp">登出</a>
+			</li>
+			</ul>
+			</center> 
+		</div>
+	<%
+			}
+		}
+		catch(Exception e)
+		{
+			
+			//銷毁session：
+		 
+			//清除cookie：
+			try{
+					Cookie getC[]=request.getCookies();
+					for(int i=0;i<getC.length;i++)
+					{
+						if(getC[i].getName().equals("getin"))
+						{
+							getC[i].setMaxAge(0);
+							response.addCookie(getC[i]);
+							response.sendRedirect("index.jsp");
+						}
+					}
+				}
+			catch(Exception err)
+			{
+				response.sendRedirect("index.jsp");
+			}
+		}
+	%>
 
 
 
     <div>
-<img src="img/愛迪達.webp" class="pc">
+		<img src="img/愛迪達.webp" class="pc">
     </div>
     <div class="div"></div>
 
