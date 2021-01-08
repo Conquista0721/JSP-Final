@@ -63,7 +63,7 @@ a
     
             <li><a href="#">MEMBER</a>
                 <ul>
-                    <li><a href="personal information.jsp">個人資料</a></li>
+                    <li><a href="bk_index.jsp">管理區</a></li>
                 </ul>
             </li>
 			<li>

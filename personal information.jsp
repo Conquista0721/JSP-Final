@@ -44,6 +44,7 @@
 	%>
 
 		<div class="box"><a href="#">TOP</a></div>
+		<div class="bo"><a href="search.jsp">搜尋</a></div>
 			<div id="menu"> 
 				<a href="index.jsp"><img src="img/商標.png" class="img1"></a>
 				<center>
@@ -79,6 +80,7 @@
 		{
 	%>
 		<div class="box"><a href="#">TOP</a></div>
+		<div class="bo"><a href="search.jsp">搜尋</a></div>
 		<div id="menu"> 
             <a href="index.jsp"><img src="img/商標.png" class="img1"></a>
             <center>
@@ -147,6 +149,7 @@
     密碼:<br><input type="password" placeholder="輸入密碼" class="input"><br><br>
 	身分證: <br><input type="text" placeholder="輸入身分證" class="input"><br><br>
     手機號碼:<br><input type="text" placeholder="輸入手機號碼" class="input"><br><br>
+	地址:<br><input type="text" placeholder="輸入地址" class="input"><br><br>
     E-mail:<br><input type="text" placeholder="輸入e-mail" class="input"><br><br>
     <button class="buttt"><img src="img/修改.png" class="pc2">
  </div>
