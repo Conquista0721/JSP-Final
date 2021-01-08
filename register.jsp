@@ -65,16 +65,12 @@
                 </ul>
             </li>
     
-            <li><a href="#">LOGIN</a>
-                <ul>
-                    <li><a href="login.jsp">會員</a></li>
-                    <li><a href="register.jsp">非會員</a></li>
-                    <li><a href="login.jsp">管理者</a></li>
-                </ul>
+            <li><a href="login.jsp">登入</a>
+              
             </li>
     
             <li>
-				<a href="#">註冊</a>
+				<a href="register.jsp">註冊</a>
             </li>
         </ul>
 			</center> 
