@@ -106,7 +106,7 @@
                 </ul>
             </li>
             
-			<li><a href="#">hello</a>
+			<li><a href="#">會員中心</a>
 				<ul>
 					<li><a href="personal information.jsp">個人資料</a></li>
 					<li><a href="#">我的收藏</a></li>
@@ -163,10 +163,10 @@
         <br>
         <br>
     </div>
-    <div class = 'container projects'>
+	<div class = 'container projects'>
         <h1>impossible is nothing</h1>
-     <div class="overlay"></div>
-     </div>
+    <div class="overlay"></div>
+    </div>
      <div>
         <br>
         <br>

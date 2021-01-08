@@ -72,58 +72,57 @@
                 </ul>
             </li>
     
-            <li><a href="#">MEMBER</a>
-                <ul>
-                    <li><a href="personal information.jsp">個人資料</a></li>
-                    <li><a href="#">我的收藏</a></li>
-                    <li><a href="car.jsp">購物車</a></li>
-                </ul>
+            <li>
+				<a href="#">註冊</a>
             </li>
         </ul>
-       </center> 
-         </div>
-<center>
-  <div class="video2"> 
-		<img src="img/line.png"><br>
-		<iframe width="560" height="315" src="https://www.youtube.com/embed/zkzxheV-LpE" frameborder="0" 
-		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
-		<img src="img/line.png">
-	</div>
-	<form action="regis.jsp" method="post">
-		<div class="word">
-			<img src="img/填寫資料.png" class="pc4">
-			<br>
-				
-				帳號:<input type="text" placeholder="輸入帳號" class="input" name="acc">
-				密碼:<input type="password" placeholder="輸入密碼" class="input" name="psd">
-				
-			<button class="buttt" type="submit"><img src="img/註冊.png" class="pc2" onclick="location.href='regis.jsp'">
+			</center> 
+        </div>
+			<center>
+			  <div class="video2"> 
+					<img src="img/line.png"><br>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/zkzxheV-LpE" frameborder="0" 
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+					<img src="img/line.png">
+				</div>
+				<form action="regis.jsp" method="post">
+					<div class="word">
+						<img src="img/填寫資料.png" class="pc4">
+						<br>
+							
+							帳號:<input type="text" placeholder="輸入帳號" class="input" name="acc">
+							密碼:<input type="password" placeholder="輸入密碼" class="input" name="psd">
+							電子信箱:<input type="password" placeholder="輸入信箱" class="input" name="eml">
+							
+						<button class="buttt" type="submit"><img src="img/註冊.png" class="pc2" onclick="location.href='regis.jsp'">
+					</div>
+				</form>
+			</center>
+
+
+		<center>
+		<div class="bgg">
+			<p>瀏覽人數:
+				<%
+					try{
+						ResultSet ct=con.createStatement().executeQuery("select * from count");
+						ct.next();
+						int count1=Integer.parseInt(ct.getString("idcount"));
+						if(session.isNew()){
+							count1++;
+							con.createStatement().executeUpdate("update count set idcount='"+count1+"';");
+						}
+						out.println(count1);
+					}
+					catch(Exception e){
+						out.println(e.toString());
+					}
+				%>
+			</p>
+			<p>本網站照片來源皆來自<a href="https://www.adidas.com.tw/" target="_blank"> 愛迪達官網</a></p>
+			<script>writeclock()</script>
 		</div>
-	</form>
-</center>
-
-
-<div class="bgg"><center>
-    <p>瀏覽人數:
-		<%
-			try{
-				ResultSet ct=con.createStatement().executeQuery("select * from count");
-				ct.next();
-				int count1=Integer.parseInt(ct.getString("idcount"));
-				if(session.isNew()){
-					count1++;
-					con.createStatement().executeUpdate("update count set idcount='"+count1+"';");
-				}
-				out.println(count1);
-			}
-			catch(Exception e){
-				out.println(e.toString());
-			}
-		%>
-	</p>
-    <p>本網站照片來源皆來自<a href="https://www.adidas.com.tw/" target="_blank"> 愛迪達官網</a></p>
-    <script>writeclock()</script>
-          </div></center>
+		</center>
 
 </body>
 </html>
