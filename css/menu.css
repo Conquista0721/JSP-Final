@@ -43,6 +43,25 @@ background-color: #afecff59;
         text-decoration: none;
         color:rgb(241, 255, 164);
     }
+
+    .search{
+        border-radius: 10%;
+        background: #82a0c2;
+        position: fixed;
+        right:50px;
+        bottom: 60px;
+      z-index: 2;
+    }
+    
+    .search a{
+        display: block;
+        width: 60px;
+        height: 50px;
+        padding:15px 15px;
+        font-size: 30px;
+        text-decoration: none;
+        color:rgb(241, 255, 164);
+    }
     
     .img1{
         height:100px;
