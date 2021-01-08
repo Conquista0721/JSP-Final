@@ -217,23 +217,25 @@
 	-->
  </tbody>
 </table>
-<div class="foot" id="foot">
- <label class="fl select-all"><input type="checkbox" class="check-all check"/> 全選</label>
- <a class="fl delete" id="deleteAll" href="javascript:;">刪除</a>
- <div class="fr closing">加入購物車</div>
- <div class="fr total">合計：$<span id="priceTotal">000</span></div>
- <div class="fr selected" id="selected">已選商品
-  <span id="selectedTotal">0</span>件
-  <span class="arrow up">︽</span>
-  <span class="arrow down">︾</span>
- </div>
- <div class="selected-view">
-  <div id="selectedViewList" class="clearfix">
+	<!--
+		<div class="foot" id="foot">
+			 <label class="fl select-all"><input type="checkbox" class="check-all check"/> 全選</label>
+			 <a class="fl delete" id="deleteAll" href="javascript:;">刪除</a>
+			 <div class="fr closing">加入購物車</div>
+			 <div class="fr total">合計：$<span id="priceTotal">000</span></div>
+			 <div class="fr selected" id="selected">已選商品
+			  <span id="selectedTotal">0</span>件
+			  <span class="arrow up">︽</span>
+			  <span class="arrow down">︾</span>
+			 </div>
+			 <div class="selected-view">
+			  <div id="selectedViewList" class="clearfix">
 
-  </div>
-  <span class="arrow">◆<span>◆</span></span>
- </div>
-</div>
+			  </div>
+			  <span class="arrow">◆<span>◆</span></span>
+			 </div>
+		</div>
+	-->
 </center>
 <script>
 

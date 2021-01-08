@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <%@page contentType="text/html;charset=utf-8" language="java" import="java.sql.*, java.util.*"%>
 <%@ include file="getDB.jsp"%>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>個人資料</title>
-
-    <style type="text/css">
-        @import"css/login.css";
-        @import "css/menu.css";
-        @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap");
-       </style>
-<script src="js/clock.js"></script>
+ <meta charset="UTF-8">
+ <title>購物車</title>
 </head>
+<style type="text/css">
+    @import"css/car.css";
+    @import "css/menu.css";
+    @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap");
+   </style>
+<style type="text/css">
 
+</style>
+<script>
+    function myFunction()
+    {
+        alert("感謝您的購買！本店產品皆是貨到付款，請耐心等候到貨通知~");
+    }
+</script>
+<script src="js/clock.js"></script>
+<script src="js/car.js"></script>
 
-<body class="bg">   
-    <%
+<body class="bg">
+	<%
         String acc="";
         String pas="";
 		//session.setAttribute("in",acc);the memory of the logged in account
@@ -141,48 +148,54 @@
 			}
 		}
 	%>
+<br>
+<br>
+<br>
+<br>
 
-     <img src="img/個人資料.png" class="pc5">
-    <div class="word1">
-   名字: <br><input type="text" placeholder="輸入名字"class="input"><br><br>
-    帳號:<br><input type="text" placeholder="輸入帳號" class="input"><br><br>
-    密碼:<br><input type="password" placeholder="輸入密碼" class="input"><br><br>
-	身分證: <br><input type="text" placeholder="輸入身分證" class="input"><br><br>
-    手機號碼:<br><input type="text" placeholder="輸入手機號碼" class="input"><br><br>
-	地址:<br><input type="text" placeholder="輸入地址" class="input"><br><br>
-    E-mail:<br><input type="text" placeholder="輸入e-mail" class="input"><br><br>
-    <button class="buttt"><img src="img/修改.png" class="pc2">
+<center>
+
+<div class="foot" id="foot">
+ <label class="fl select-all"><input type="checkbox" class="check-all check"/> 全選</label>
+ <a class="fl delete" id="deleteAll" href="javascript:;">刪除</a>
+ <div class="fr closing">結 算</div>
+ <div class="fr total">合計：$<span id="priceTotal">000</span></div>
+ <div class="fr selected" id="selected">已選商品
+  <span id="selectedTotal">0</span>件
+  <span class="arrow up">︽</span>
+  <span class="arrow down">︾</span>
  </div>
- 
- <div>
-     <img src="img/消費紀錄.png" class="pc6">
-     <div class="span2">
-<img src="img/頭貼.png" class="item2"><h class="item3">商品名稱</h><br><h class="item4">數量</h><br><h class="item4">價錢</h>
-     </div>
-     <div class="span3"></div>
-     <div class="span2"></div>
+ <div class="selected-view">
+  <div id="selectedViewList" class="clearfix">
+
+  </div>
+  <span class="arrow">◆<span>◆</span></span>
  </div>
- <div>
-    <img src="img/商品評論.png" class="pc6">
-    <div class="span2">
+</div></center>
+<script>
 
-        <img src="img/頭貼.png" class="item2"><h class="item3">名字</h><br><img src="img/1star.png" class="item5"></h><br><h class="item4">評論</h>
+</script>
 
-    </div>
-    <div class="span3"></div>
-    <div class="span2"></div>
- </div>
-<div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
 
+
+<br>
+<br>
+<br>
+<br>
+<br>
 </div>
-	<center>
-	<div class="bgg">
+<center>
+<img src="img/訂購資料.png" class="pc3">
+<div class="word1">
+收件者姓名: <input type="text" placeholder="輸入姓名" class="input"><br><br>
+手機號碼:<input type="text" placeholder="輸入手機號碼" class="input"><br><br>
+取貨店家:<input type="text" placeholder="輸入取貨店家" class="input"><br><br>
+(請寫全名。ex:全家 中壢復興店。)
+
+</div></center>
+<div><center><a href="index.jsp"><button class="butttt"><img src="img/訂購.png" class="pc4" onclick="myFunction()"></a></center> </div>
+
+<div class="bgg"><center>
     <p>瀏覽人數:
 		<%
 			try{
@@ -202,9 +215,7 @@
 	</p>
     <p>本網站照片來源皆來自<a href="https://www.adidas.com.tw/" target="_blank"> 愛迪達官網</a></p>
     <script>writeclock()</script>
-	</div>
-	</center>
-
+          </div></center>
 
 </body>
 </html>

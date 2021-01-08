@@ -77,20 +77,12 @@
 					</ul>
 				</li>
 		
-				<li><a href="#">LOGIN</a>
-					<ul>
-						<li><a href="login.jsp">會員</a></li>
-						<li><a href="register.jsp">非會員</a></li>
-						<li><a href="login.jsp">管理者</a></li>
-					</ul>
+				<li>
+					<a href="login.jsp">登入</a>
 				</li>
-		
-				<li><a href="#">MEMBER</a>
-					<ul>
-						<li><a href="personal information.jsp">個人資料</a></li>
-						<li><a href="#">我的收藏</a></li>
-						<li><a href="car.jsp">購物車</a></li>
-					</ul>
+    
+				<li>
+					<a href="register.jsp">註冊</a>
 				</li>
 			</ul>
 			</center> 
@@ -124,7 +116,7 @@
 			<li><a href="#">會員中心</a>
 				<ul>
 					<li><a href="personal information.jsp">個人資料</a></li>
-					<li><a href="#">我的收藏</a></li>
+					<li><a href="favorite.jsp">我的收藏</a></li>
 					<li><a href="car.jsp">購物車</a></li>
 				</ul>
 			</li>
@@ -162,11 +154,7 @@
 				}
 			}
 		%> 
-		
 
-        <br>
-        <br>
-        <br>
      <div class="divv2"><center>
 		
 		<%
@@ -213,62 +201,64 @@
             </div></center>
         </div>
 		
-		<%
-			}
-		%>
+		
      </div>
 
 
 	<div>
-        <h class="name">商品名稱:<%=pp.getString("p_name")%></h><br>
-        <h class="name2">價格:<%=pp.getString("p_price")%></h><br>
-		<h class="name2">庫存:<%=pp.getString("p_stock")%></h>
+        <h class="name">商品名稱: <%=pp.getString("p_name")%></h><br>
+        <h class="name2">價格: <%=pp.getString("p_price")%></h><br>
+		<h class="name2">庫存: <%=pp.getString("p_stock")%></h>
     </div>
-
-		<center>
-			<img src="img/選擇尺寸.png" class="size">
-			<div class="abgne-menu-20140101-1">
-				<input type="radio" id="8" name="sex">
-				<label for="8">8</label>
-				<input type="radio" id="8.5" name="sex">
-				<label for="8.5">8.5</label>
-				<input type="radio" id="9" name="sex">
-				<label for="9">9</label>
-				<input type="radio" id="9.5" name="sex">
-				<label for="9.5">9.5</label>
-				<input type="radio" id="10" name="sex">
-				<label for="10">10</label>
-				<input type="radio" id="10.5" name="sex">
-				<label for="10.5">10.5</label>
-				<input type="radio" id="11" name="sex">
-				<label for="11">11</label>
-				<input type="radio" id="11.5" name="sex">
-				<label for="11.5">11.5</label>
-			</div>
-		</center>
+	
+		<!--
+			<center>
+				<img src="img/選擇尺寸.png" class="size">
+				<div class="abgne-menu-20140101-1">
+					<input type="radio" id="8" name="sex">
+					<label for="8">8</label>
+					<input type="radio" id="8.5" name="sex">
+					<label for="8.5">8.5</label>
+					<input type="radio" id="9" name="sex">
+					<label for="9">9</label>
+					<input type="radio" id="9.5" name="sex">
+					<label for="9.5">9.5</label>
+					<input type="radio" id="10" name="sex">
+					<label for="10">10</label>
+					<input type="radio" id="10.5" name="sex">
+					<label for="10.5">10.5</label>
+					<input type="radio" id="11" name="sex">
+					<label for="11">11</label>
+					<input type="radio" id="11.5" name="sex">
+					<label for="11.5">11.5</label>
+				</div>
+			</center>
+		-->
 
 		<center>
 			<img src="img/選擇數量.png" class="size">
 			<div class="abgne-menu-20140101-2">
-				<input type="radio" id="1" name="math">
-				<label for="1">1</label>
-				<input type="radio" id="2" name="math">
-				<label for="2">2</label>
-				<input type="radio" id="3" name="math">
-				<label for="3">3</label>
-				<input type="radio" id="4" name="math">
-				<label for="4">4</label>
-				<input type="radio" id="5" name="math">
-				<label for="5">5</label>
+				<form id='myform' method='POST' action='insertlist4.jsp'>
+				 <%out.println(" <input type='hidden' name='pid' value='"+aa+"'>");%>
+				<input type='text' name='quantity' value="0" style='height:40px'>
+				
 			</div>
 		</center>
 
-	<center><button class="but"><img src="img/加入收藏.png" class="car"></button><button class="but"><img src="img/加入購物車.png" class="car"></button></center>
+		<center>
+			<button class="but" type="submit"><img src="img/加入購物車.png" class="car"></button>
+			<%
+				out.print("<a href='add_shopping.jsp?p_id="+aa+"&act=love2&amount=1'/>"+"<img src='img/加入收藏.png' class='car'>"+"</a>");
+            %>
+		</center>
+				</form>
 
      <div class="border">
 		<h2><%=pp.getString("p_textarea")%></h2>
      </div>
-
+    <%
+			}
+	%>
 
      <div class="word2">
         <img src="img/頭貼.png" class="head1">

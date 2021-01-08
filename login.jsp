@@ -36,12 +36,9 @@
                 </ul>
             </li>
     
-            <li><a href="#">LOGIN</a>
-                <ul>
-                    <li><a href="login.jsp">登入</a></li>
-                    <li><a href="register.jsp">註冊</a></li>
-                </ul>
-            </li>
+            <li><a href="login.jsp">登入</a></li>
+			<li><a href="register.jsp">註冊</a></li>
+			
 			</ul>
 			</center> 
         </div>

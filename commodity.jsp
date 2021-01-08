@@ -66,12 +66,8 @@
                 </ul>
             </li>
     
-            <li><a href="#">LOGIN</a>
-                <ul>
-                    <li><a href="login.jsp">會員</a></li>
-                    <li><a href="register.jsp">非會員</a></li>
-                    <li><a href="login.jsp">管理者</a></li>
-                </ul>
+            <li>
+				<a href="login.jsp">登入</a>
             </li>
     
             <li>
@@ -111,7 +107,7 @@
 				<li><a href="#">會員中心</a>
 					<ul>
 						<li><a href="personal information.jsp">個人資料</a></li>
-						<li><a href="#">我的收藏</a></li>
+						<li><a href="favorite.jsp">我的收藏</a></li>
 						<li><a href="car.jsp">購物車</a></li>
 					</ul>
 				</li>
