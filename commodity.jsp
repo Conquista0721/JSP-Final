@@ -170,9 +170,9 @@
 
   <div id="jogging">
 	  <%//jsp連接前端範例
-			sql="SELECT * FROM product order by p_hot desc limit 3; ";
-			PreparedStatement pstmt = con.prepareStatement(sql);
-			ResultSet rs=pstmt.executeQuery();
+			sql="SELECT * FROM product ORDER BY p_hot DESC LIMIT 3; ";
+			
+			ResultSet rs=con.createStatement().executeQuery(sql);
 			
 			while(rs.next()){
 				out.print("<div class='com'>");
@@ -223,14 +223,14 @@
   </center>
   <div id="jogging">
 	<%//jsp連接前端範例
-			sql="SELECT DISTINCT p_image, p_class FROM product WHERE p_class='1'; ";
-			rs=pstmt.executeQuery(sql);
+			sql="SELECT DISTINCT p_image, p_class, p_id FROM product WHERE p_class='1'; ";
+			rs=con.createStatement().executeQuery(sql);
 			
 			while(rs.next()){
 				out.print("<div class='com'>");
 				out.print("<img src='"+rs.getString("p_image")+"' ");
 				out.print("class='img'>"+"<br>");
-				out.print("<a href=' '>");
+				out.print("<a href='item.jsp?p_id="+rs.getString("p_id")+"'>");
 				out.print("<input type='button' value='詳細' style='width:300px;height:50px;'></a></div>");
 			}	
 	%>
@@ -281,14 +281,14 @@
 
   <div id="jogging">
 	<%//jsp連接前端範例
-			sql="SELECT DISTINCT p_image, p_class FROM product WHERE p_class='2'; ";
-			rs=pstmt.executeQuery(sql);
+			sql="SELECT DISTINCT p_image, p_class, p_id FROM product WHERE p_class='2'; ";
+			rs=con.createStatement().executeQuery(sql);
 			
 			while(rs.next()){
 				out.print("<div class='com'>");
 				out.print("<img src='"+rs.getString("p_image")+"' ");
 				out.print("class='img'>"+"<br>");
-				out.print("<a href=' '>");
+				out.print("<a href='item.jsp?p_id="+rs.getString("p_id")+"'>");
 				out.print("<input type='button' value='詳細' style='width:300px;height:50px;'></a></div>");
 			}	
 	%>
@@ -340,16 +340,16 @@
 
   <div id="jogging">
 	<%//jsp連接前端範例
-			sql="SELECT DISTINCT p_image, p_class FROM product WHERE p_class='3'; ";
-			rs=pstmt.executeQuery(sql);
+			sql="SELECT DISTINCT p_image, p_class, p_id FROM product WHERE p_class='3'; ";
+			rs=con.createStatement().executeQuery(sql);
 			
 			while(rs.next()){
 				out.print("<div class='com'>");
 				out.print("<img src='"+rs.getString("p_image")+"' ");
 				out.print("class='img'>"+"<br>");
-				out.print("<a href=' '>");
+				out.print("<a href='item.jsp?p_id="+rs.getString("p_id")+"'>");
 				out.print("<input type='button' value='詳細' style='width:300px;height:50px;'></a></div>");
-			}	
+			}		
 	%>
   <!--
     <div class="com">

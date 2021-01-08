@@ -175,8 +175,8 @@
 <div class="word1">
 收件者姓名: <input type="text" placeholder="輸入姓名" class="input" name="oname" value="<%=list.getString("m_name")%>"><br><br>
 手機號碼:<input type="text" placeholder="輸入手機號碼" class="input" name="ophone" value="<%=list.getString("m_phone")%>"><br><br>
-取貨店家:<input type="text" placeholder="輸入取貨店家" class="input" name="oaddress" value="<%=list.getString("m_address")%>"><br><br>
-(請寫全名。ex:全家 中壢復興店。)
+貨到付款郵寄地址:<input type="text" placeholder="輸入取貨地址" class="input" name="oaddress" value="<%=list.getString("m_address")%>"><br><br>
+(請寫全名。ex:桃園市中壢區新中北路200號)
 
 </div></center>
 <div><center><button class="butttt" type="submit"><img src="img/訂購.png" class="pc4" onclick="myFunction()"></center> </div>
