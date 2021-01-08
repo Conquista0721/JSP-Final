@@ -13,7 +13,7 @@
 		if(acc==null||acc.equals("")||pas==null||pas.equals(""))
 		{
 			out.write("<script language=javascript>alert('帳號密碼錯誤');</script>");
-			response.setHeader("refresh","0;URL=index.jsp");
+			response.setHeader("refresh","0;URL=login.jsp");
 		}	
 		else 
 		{
