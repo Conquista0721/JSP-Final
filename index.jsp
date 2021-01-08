@@ -150,9 +150,9 @@
 <br>
 <br>
     <div id="cover" class="coverflow" class="div1">
-        <a href="#"><img src="img/ad1.jpg"></a>
-        <a href="#"><img src="img/ad2.jpg"></a>
-        <a href="#"><img src="img/ad3.jpg"></a>
+		<a href="#"><img src="img/1.png"></a>
+        <a href="#"><img src="img/2.png"></a>
+        <a href="#"><img src="img/3.png"></a>
     </div>
 
     <div>
@@ -210,7 +210,25 @@
 			</div>
 		</div>
 	</div>
-</div></div> 
+</div>
+
+		<!--隨機廣告板-->
+		<%
+           ResultSet rs;
+           con.createStatement().execute(sql);
+           Random ran=new Random();
+           int current_adid=ran.nextInt(3);            
+           sql="SELECT * FROM `randad` WHERE `adid`= " + current_adid;
+           rs=con.createStatement().executeQuery(sql);
+           while (rs.next())
+           {
+             out.println("<a href='httsps://"+rs.getString(4)+"'>");
+             out.println("<img src='"+rs.getString(2)+"/"+rs.getString(3)+"'");
+             out.println(" alt='"+rs.getString(5)+"'></a>");
+           }
+		%>
+
+</div> 
 
 
 
