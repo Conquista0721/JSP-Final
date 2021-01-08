@@ -56,28 +56,12 @@ a
 </head>
 <body class="bg">
 <div id="menu"> 
-            <a href="index.jsp"><img src="img/商標.png" class="img1"></a>
+            <a href="bk_index.jsp"><img src="img/商標.png" class="img1"></a>
             <center>
         <ul class="drop-down-menu">
-            <li><a href="#">ABOUT US</a>
-                <ul>
-                    <li><a href="about us.jsp">關於我們</a></li>
-                    <li><a href="about us.jsp">常見問題</a></li>
-                </ul>
-            </li>
-    
-            <li><a href="#">MENU</a>
-                <ul>
-                    <li><a href="commodity.jsp">熱門商品</a></li>
-                    <li><a href="commodity.jsp">休閒鞋款</a></li>
-                    <li><a href="commodity.jsp">籃球鞋款</a></li>
-                    <li><a href="commodity.jsp">慢跑鞋款</a></li>
-                </ul>
-            </li>
-    
             <li><a href="#">MEMBER</a>
                 <ul>
-                    <li><a href="personal information.jsp">個人資料</a></li>
+                    <li><a href="bk_index.jsp">管理區</a></li>
                 </ul>
             </li>
 			<li>
@@ -225,8 +209,8 @@ a
   <form action="add_order.jsp" method="post">
   <tr>
   <tr>
-    <td>商品編號(必填)</td>
-    <td colspan="2"><textarea style="width: 90%;" name="lid"></textarea></td>
+    <td>訂單編號</td>
+    <td colspan="2"><textarea style="width: 90%;" name="lid" disabled="disabled"></textarea></td>
   </tr>
    <tr>
     <td>下定日期(必填)</td>

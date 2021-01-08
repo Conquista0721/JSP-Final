@@ -57,28 +57,12 @@ a
 </head>
 <body class="bg">
 <div id="menu"> 
-            <a href="index.jsp"><img src="img/商標.png" class="img1"></a>
+            <a href="bk_index.jsp"><img src="img/商標.png" class="img1"></a>
             <center>
         <ul class="drop-down-menu">
-            <li><a href="#">ABOUT US</a>
-                <ul>
-                    <li><a href="about us.jsp">關於我們</a></li>
-                    <li><a href="about us.jsp">常見問題</a></li>
-                </ul>
-            </li>
-    
-            <li><a href="#">MENU</a>
-                <ul>
-                    <li><a href="commodity.jsp">熱門商品</a></li>
-                    <li><a href="commodity.jsp">休閒鞋款</a></li>
-                    <li><a href="commodity.jsp">籃球鞋款</a></li>
-                    <li><a href="commodity.jsp">慢跑鞋款</a></li>
-                </ul>
-            </li>
-    
             <li><a href="#">MEMBER</a>
                 <ul>
-                    <li><a href="personal information.jsp">個人資料</a></li>
+                    <li><a href="bk_index.jsp">管理區</a></li>
                 </ul>
             </li>
 			<li>
@@ -228,12 +212,8 @@ a
   	<td colspan="2"><textarea style="width: 90%;" name="pas"></textarea></td>
   </tr>
   <tr>
-  	<td>名字</td>
-  	<td colspan="2"><textarea style="width: 90%;" name="firstname"></textarea></td>
-  </tr>
-    <tr>
-  	<td>姓氏</td>
-  	<td colspan="2"><textarea style="width: 90%;" name="lastname"></textarea></td>
+  	<td>姓名</td>
+  	<td colspan="2"><textarea style="width: 90%;" name="name"></textarea></td>
   </tr>
     <tr>
   	<td>地址</td>
@@ -253,7 +233,7 @@ a
   </tr>
     <tr>
   	<td>電話</td>
-  	<td colspan="2"><textarea style="width: 90%;" name="tel"></textarea></td>
+  	<td colspan="2"><textarea style="width: 90%;" name="phone"></textarea></td>
   </tr>
   <tr>
   <td colspan="3">

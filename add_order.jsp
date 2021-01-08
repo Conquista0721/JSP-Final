@@ -11,28 +11,33 @@
 		String maccount=request.getParameter("maccount");
 		String laddress=request.getParameter("laddress");
 		String lphone=request.getParameter("lphone");
-
-		if(lid==null||lid.equals("")||pid==null||pid.equals("")||ldate==null||ldate.equals(""))
-		{
-			out.write("<script language=javascript>alert('必填欄位不能為空');</script>");
-			response.setHeader("refresh","0;URL=back_order.jsp");
-		}
-		else 
-		{
-			String sql2="select * from shoppinglist where l_id='"+lid+"';";
-			ResultSet a=con.createStatement().executeQuery(sql2);
-			if(a.next())
+		try{
+			if(pid==null||pid.equals("")||ldate==null||ldate.equals(""))
 			{
-				out.write("<script language=javascript>alert('訂單重複');</script>");
+				out.write("<script language=javascript>alert('必填欄位不能為空');</script>");
 				response.setHeader("refresh","0;URL=bk_order.jsp");
 			}
-			else
+			else 
 			{
-			sql="INSERT INTO shoppinglist(l_id,date,p_id,l_number,m_account,l_address,l_phone) values('"+lid+"','"+ldate+"','"+pid+"','"+lnumber+"','"+maccount+"','"+laddress+"','"+lphone+"');";
-            con.createStatement().execute(sql); 
-			out.write("<script language=javascript>alert('下單成功');</script>");
+				String sql2="select * from shoppinglist where l_id='"+lid+"';";
+				ResultSet a=con.createStatement().executeQuery(sql2);
+				if(a.next())
+				{	
+				out.write("<script language=javascript>alert('訂單重複');</script>");
+				response.setHeader("refresh","0;URL=bk_order.jsp");
+				}
+				else
+				{
+				sql="INSERT INTO jspfinal.shoppinglist(date,p_id,l_number,m_account,l_address,l_phone) values('"+ldate+"','"+pid+"','"+lnumber+"','"+maccount+"','"+laddress+"','"+lphone+"');";
+				con.createStatement().execute(sql); 
+				out.write("<script language=javascript>alert('下單成功');</script>");
+				response.setHeader("refresh","0;URL=bk_order.jsp");
+				}
+			}
+		}
+		catch(Exception e){
+			out.write("<script language=javascript>alert('下單錯誤');</script>");
 			response.setHeader("refresh","0;URL=bk_order.jsp");
-		    }
 		}
 	%>
 </body>
