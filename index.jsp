@@ -150,9 +150,9 @@
 <br>
 <br>
     <div id="cover" class="coverflow" class="div1">
-        <a href="#"><img src="img/1.png"></a>
-        <a href="#"><img src="img/2.png"></a>
-        <a href="#"><img src="img/3.png"></a>
+        <a href="#"><img src="img/ad1.jpg"></a>
+        <a href="#"><img src="img/ad2.jpg"></a>
+        <a href="#"><img src="img/ad3.jpg"></a>
     </div>
 
     <div>
