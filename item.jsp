@@ -258,46 +258,59 @@
      </div>
     <%
 			}
+	String sql2="SELECT * FROM shoppinglist,product WHERE l_boolean='0' AND shoppinglist.m_account='"+acc+"' AND shoppinglist.p_id=product.p_id order by l_id desc; ";
+    ResultSet tmp = con.createStatement().executeQuery(sql2);
+    while(tmp.next())
+            {
 	%>
-
+<form action="insertlist3.jsp" method="post">
      <div class="word2">
+	 <div class="user">
         <img src="img/頭貼.png" class="head1">
           <br>
           名字:<br>
-          <input placeholder="請輸入名字" class="input"><br>
+          <input placeholder="請輸入名字" class="input" name="name" ><%=tmp.getString("l_name")%><br>
           <center>
           
-<div class="scoreEvaluation">
+			<div class="scoreEvaluation">
 
-    <div class="title"></div>
-    
-    <div class="scoringDevice clearfix">
-    
-    <img src="img/star.png" alt="分数" class="scoreImg fl" data-index='1' onclick="scoreFunc(event)" />
-    
-    <img src="img/star.png" alt="分数" class="scoreImg fl" data-index='2' onclick="scoreFunc(event)" />
-    
-    <img src="img/star.png" alt="分数" class="scoreImg fl" data-index='3' onclick="scoreFunc(event)" />
-    
-    <img src="img/star.png" alt="分数" class="scoreImg fl" data-index='4' onclick="scoreFunc(event)" />
-    
-    <img src="img/star.png" alt="分数" class="scoreImg fl" data-index='5' onclick="scoreFunc(event)" />
-    
-    </div>
-    
-    </div>
+				<div class="title"></div>
+				
+				<div class="scoringDevice clearfix" name="comment">
+				
+				<img src="img/star.png" alt="分数" class="scoreImg fl" data-index='1' onclick="scoreFunc(event)" />
+				
+				<img src="img/star.png" alt="分数" class="scoreImg fl" data-index='2' onclick="scoreFunc(event)" />
+				
+				<img src="img/star.png" alt="分数" class="scoreImg fl" data-index='3' onclick="scoreFunc(event)" />
+				
+				<img src="img/star.png" alt="分数" class="scoreImg fl" data-index='4' onclick="scoreFunc(event)" />
+				
+				<img src="img/star.png" alt="分数" class="scoreImg fl" data-index='5' onclick="scoreFunc(event)" />
+				
+				</div>
+				
+			</div>
              </center>
-  <br>
+		   <br>
           評論:<br>
-          <textarea name="mytext"
-                rows="8"
-                cols="65"
-                required
-                class="aa"></textarea>
-                <br>
-                <button class="but"><img src="img/送出.png" class="car2">
-          </div>
-
+           <textarea name="message" rows="8" cols="65" required class="aa"></textarea>
+           <br>
+           <button class="but" type="submit"><img src="img/送出.png" class="car2">
+	</div>
+		    <div class="discuss">
+				<b>商品評價</b>
+				<div style="width: 20%; margin-top: 5%;">
+					<img src="img/頭貼.png" style="width: 40%; float: left;" class="userImg">
+				</div>
+				<div>
+					<%=tmp.getString("m_account")%>
+					<img src="img/5star.png" width="20%" style="display: block;">
+					<div style="margin: 2% 0 0 8%; font-size: medium;"><%=tmp.getString("message")%></div>
+				</div>
+			</div>
+	</div>
+</form>
 
 
 
@@ -322,6 +335,7 @@
 			catch(Exception e){
 				out.println(e.toString());
 			}
+		}
 		%>
 	</p>
     <p>本網站照片來源皆來自<a href="https://www.adidas.com.tw/" target="_blank"> 愛迪達官網</a></p>

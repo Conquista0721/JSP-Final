@@ -1,37 +1,76 @@
-.head1{
+.head1 {
     height: 150px;
     width: 150px;
     float: left;
 }
 
-.divv1{
+.divv1 {
     height: 200px;
     width: 150px;
-    background-color:#f7aa92b4 ;
+    background-color: #f7aa92b4;
 }
 
-.input{
+.input {
     font-size: 20px;
     width: 150px;
-
 }
+
 .word2{
-font-size: 20px;
-padding: 10px;   
-background-color:#f7aa92b4 ;
-height: 400px;
-width: 500px;
-margin-left: 100px;
-margin-bottom: 100px;
+    margin-left: 8%;
+    margin-bottom: 40%;
 }
 
-.butt{
+.user ,.discuss{
+    font-size: 20px;
+    padding: 10px;
+    background-color: #f7aa92b4;
+    height: 400px;
+    width: 35%;
+    margin-left: 100px;
+    margin-bottom: 100px;
+    float: left;
+}
+
+.userImg{
+    margin-top: 5%;
+}
+
+.scoreEvaluation{
+    width: 80%;
+}
+
+.butt {
     height: 50px;
     width: 80px;
 }
 
-.starts,.starts ul{float:left;}
-    .starts{padding-left:16px;padding-top:7px;font-size: 20px;}
-    .starts ul li{width:32px;height:31px;float:left;background:#ddd;padding-right:3px;list-style-type: none}
-    .starts ul li.on{background:#82a0c2;}
-    .starts ul span{display:inline;float:left;padding-left:10px;height:31px;line-height:31px;}
+.starts, .starts ul {
+    float: left;
+}
+
+.starts {
+    padding-left: 16px;
+    padding-top: 7px;
+    font-size: 20px;
+}
+
+.starts ul li {
+    width: 32px;
+    height: 31px;
+    float: left;
+    background: #ddd;
+    padding-right: 3px;
+    list-style-type: none
+}
+
+.starts ul li.on {
+    background: #82a0c2;
+}
+
+.starts ul span {
+    display: inline;
+    float: left;
+    padding-left: 10px;
+    height: 31px;
+    line-height: 31px;
+}
