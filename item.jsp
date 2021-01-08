@@ -240,7 +240,7 @@
 			<div class="abgne-menu-20140101-2">
 				<form id='myform' method='POST' action='insertlist4.jsp'>
 				 <%out.println(" <input type='hidden' name='pid' value='"+aa+"'>");%>
-				<input type='text' name='quantity' value="0" style='height:40px'>
+				<input type='text' name='quantity' value="1" style='height:40px'>
 				
 			</div>
 		</center>

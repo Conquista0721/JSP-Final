@@ -11,8 +11,9 @@
     @import "css/menu.css";
     @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap");
    </style>
+   
+   
 <style type="text/css">
-
 </style>
 <script>
     function myFunction()
@@ -152,7 +153,7 @@
 <br>
 <br>
 <br>
-
+<form action="order_cart.jsp">
 <center>
 <table id="cartTable">
  <thead>
@@ -173,26 +174,16 @@
         while(tmp.next()){
 				out.print("<tr>");
 				out.print("<td class='goods'>"+"<a href='item.jsp?p_id="+tmp.getString("p_id")+"'/>"+"<img src='"+tmp.getString("p_image")+"'/>"+"<span>"+tmp.getString("p_name")+"</span>"+"</a>"+"</td>");
-				out.print("<td class='price'>"+tmp.getString("p_price")+"</td>");
-				out.print("<td class='count'>"+"<span class='reduce'></span>");
-				out.print("<input class='count-input' type='text' value='1'/>");
-				out.print("<span class='add'>"+"+"+"</span>"+"</td>");	
-				out.print("<td class='subtotal'>"+"0"+"</td>");
-				out.print("<td class='operation'>"+"<span class='delete'>"+"刪除"+"</span>"+"</td>");
+				out.print("<td class='price'>"+"<span>$"+tmp.getString("p_price")+"</span>"+"</td>");
+				out.print("<td class='count'>");
+				out.print("<input class='count-input' style='width:50px;height:20px;left:25px;;' type='number' name='amount' value='"+tmp.getString("amount")+"'/>");
+				out.print("</td>");	
+				out.print("<td class='subtotal'>"+"<span>$"+String.valueOf(Integer.parseInt(tmp.getString("p_price"))*Integer.parseInt(tmp.getString("amount")))+"</span>"+"</td>");
+				out.print("<td class='operation'>"+"<a href='del_cart.jsp?s_id="+tmp.getString("s_id")+"'>"+"<span class='delete'>"+"刪除"+"</span>"+"</a>"+"</td>");
+				out.println("<input type='hidden' name='pid' value='"+tmp.getString("p_id")+"'>");
 				out.print("</tr>");
 		}	
     %>                            		
-	<tr>
-	 
-	   <td class="goods"><img src="img/shoe1.jpg" alt=""/><span>鞋子一</span></td>
-	   <td class="price">2500</td>
-	   <td class="count">
-		<span class="reduce"></span>
-		<input class="count-input" type="text" value="1"/>
-		<span class="add">+</span></td>
-	   <td class="subtotal">2500</td>
-	   <td class="operation"><span class="delete">刪除</span></td>
-	</tr>
 	<!--
 	  <tr>
 	   <td class="checkbox"><input class="check-one check" type="checkbox"/></td>
@@ -221,16 +212,17 @@
 	-->
  </tbody>
 </table>
-	<form action="order_cart.jsp">
+	
 		<div class="foot" id="foot">
 			 
 			
 			 <div class="fr closing"><button type="submit" style="font-size:18px; border:2px blue none;">結 算</button></div>
-			 <div class="fr total">合計：$<span id="priceTotal">000</span></div>
+			
 			 
 		</div>
-	</form>
 </center>
+	</form>
+
 <script>
 
 </script>
