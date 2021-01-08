@@ -26,7 +26,7 @@
 			for(int i=0;i<lid.length;i++)
 			{	
 			
-			sql="UPDATE shoppinglist SET date='"+ldate[i]+"',p_id='"+pid[i]+"',l_number='"+lnumber[i]+"',m_account='"+maccount[i]+"',l_address='"+laddress[i]+"',l_phone='"+lphone[i]+"',l_totalprice='"+ltotalprice[i]+"' WHERE l_id='"+lid[i]+"'";
+			sql="UPDATE jspfinal.shoppinglist SET date='"+ldate[i]+"',p_id='"+pid[i]+"',l_number='"+lnumber[i]+"',m_account='"+maccount[i]+"',l_address='"+laddress[i]+"',l_phone='"+lphone[i]+"',l_totalprice='"+ltotalprice[i]+"' WHERE l_id='"+lid[i]+"'";
 			con.createStatement().executeUpdate(sql); 
 			}
 			out.write("<script language=javascript>alert('修改成功');</script>");

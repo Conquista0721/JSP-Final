@@ -93,15 +93,16 @@ a
 		<td colspan="2" rowspan="4" style="width: 70rem">
 			<center><table border="1" class="in">
 				<tr>
-					<td>商品編號</td>
+					<td>商品編號<br>(不能更改)</td>
 					<td>商品類別</td>
 					<td>商品名稱</td>
 					<td>商品數量</td>
 					<td>商品單價</td>
-					<td>商品原價</td>
-					<td>商品折扣</td>
-          <td>商品圖片</td>
-          <td>刪除</td>
+					<td>商品圖一</td>
+					<td>商品圖二</td>
+					<td>商品圖三</td>
+					<td>商品敘述</td>
+					<td>刪除</td>
 				</tr> <%
 				 String acc="";
         String pas="";
@@ -158,11 +159,11 @@ a
         
 <%
                 sql="SELECT * FROM product;";
-				        ResultSet tmp=con.createStatement().executeQuery(sql);
+				ResultSet tmp=con.createStatement().executeQuery(sql);
                 while(tmp.next())
                 {
                   out.println("<tr>");
-                  out.println("<td>"+"<textarea name='pid' readonly>"+tmp.getString("p_id")+"</textarea>"+"</td>");
+                  out.println("<td>"+"<textarea name='pid' disabled='disabled'>"+tmp.getString("p_id")+"</textarea>"+"</td>");
                   out.println("<td>"+"<textarea name='pclass'>"+tmp.getString("p_class")+"</textarea>"+"</td>");
 				  out.println("<td>"+"<textarea name='phot>"+tmp.getString("p_hot")+"</textarea>"+"</td>");
                   out.println("<td>"+"<textarea name='pname'>"+tmp.getString("p_name")+"</textarea>"+"</td>");
@@ -224,7 +225,7 @@ a
   <form action="add_product.jsp" method="post">
   <tr>
   	<td>商品編號(必填)</td>
-  	<td colspan="2"><textarea style="width: 90%;" name="pid"></textarea></td>
+  	<td colspan="2"><textarea style="width: 90%;" name="pid" disabled="disabled"></textarea></td>
   </tr>
   <tr>
   	<td>商品類別</td>
@@ -243,16 +244,20 @@ a
   	<td colspan="2"><textarea style="width: 90%;" name="pprice"></textarea></td>
   </tr>
    <tr>
-  	<td>商品原價</td>
-  	<td colspan="2"><textarea style="width: 90%;" name="poriginprice"></textarea></td>
-  </tr>
-    <tr>
-  	<td>商品折扣</td>
-  	<td colspan="2"><textarea style="width: 90%;" name="pdiscount"></textarea></td>
-  </tr>
-    <tr>
-  	<td>商品圖片</td>
+  	<td>商品圖一</td>
   	<td colspan="2"><textarea style="width: 90%;" name="pimage"></textarea></td>
+  </tr>
+     <tr>
+  	<td>商品圖二</td>
+  	<td colspan="2"><textarea style="width: 90%;" name="pimage2"></textarea></td>
+  </tr>
+     <tr>
+  	<td>商品圖三</td>
+  	<td colspan="2"><textarea style="width: 90%;" name="pimage3"></textarea></td>
+  </tr>
+    <tr>
+  	<td>商品敘述</td>
+  	<td colspan="2"><textarea style="width: 90%;" name="ptextarea"></textarea></td>
   </tr>
   <tr>
   <td colspan="3">
