@@ -5,5 +5,5 @@
 	String lid=request.getParameter("love_id");
 	sql="delete from love where love_id='"+lid+"';";
 	con.createStatement().executeUpdate(sql);
-    response.sendRedirect("favorite_content.jsp");
+    response.sendRedirect("favorite.jsp");
 %> 

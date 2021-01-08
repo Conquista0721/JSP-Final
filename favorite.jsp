@@ -109,7 +109,7 @@
 			<li><a href="#">會員中心</a>
 				<ul>
 					<li><a href="personal information.jsp">個人資料</a></li>
-					<li><a href="#">我的收藏</a></li>
+					<li><a href="favorite.jsp">我的收藏</a></li>
 					<li><a href="car.jsp">購物車</a></li>
 				</ul>
 			</li>
@@ -155,50 +155,66 @@
 <table id="cartTable">
  <thead>
   <tr>
-   <th><label><input class="check-all check" type="checkbox"/> 全選</label></th>
+  
    <th>商品</th>
    <th>單價</th>
-   <th>數量</th>
-   <th>小計</th>
+   <th>加入購物車</th>
    <th>操作</th>
   </tr>
  </thead>
  <tbody>
-  <tr>
-   <td class="checkbox"><input class="check-one check" type="checkbox"/></td>
-   <td class="goods"><img src="img/shoe1.jpg" alt=""/><span>鞋子一</span></td>
-   <td class="price">2500</td>
-   <td class="count">
-    <span class="reduce"></span>
-    <input class="count-input" type="text" value="1"/>
-    <span class="add">+</span></td>
-   <td class="subtotal">2500</td>
-   <td class="operation"><span class="delete">刪除</span></td>
-  </tr>
-  <tr>
-   <td class="checkbox"><input class="check-one check" type="checkbox"/></td>
-   <td class="goods"><img src="img/shoe4.jpg" alt=""/><span>鞋子二</span></td>
-   <td class="price">3500</td>
-   <td class="count"><span class="reduce"></span><input class="count-input" type="text" value="1"/><span class="add">+</span></td>
-   <td class="subtotal">3500</td>
-   <td class="operation"><span class="delete">刪除</span></td>
-  </tr>
-  <tr>
-   <td class="checkbox"><input class="check-one check" type="checkbox"/></td>
-   <td class="goods"><img src="img/shoe9.jpg" alt=""/><span>鞋子三</span></td>
-   <td class="price">2000</td>
-   <td class="count"><span class="reduce"></span><input class="count-input" type="text" value="1"/><span class="add">+</span></td>
-   <td class="subtotal">2000</td>
-   <td class="operation"><span class="delete">刪除</span></td>
-  </tr>
-  <tr>
-   <td class="checkbox"><input class="check-one check" type="checkbox"/></td>
-   <td class="goods"><img src="img/shoe6.jpg" alt=""/><span>鞋子四</span></td>
-   <td class="price">3000</td>
-   <td class="count"><span class="reduce"></span><input class="count-input" type="text" value="1"/><span class="add">+</span></td>
-   <td class="subtotal">3000</td>
-   <td class="operation"><span class="delete">刪除</span></td>
-  </tr>
+	<%//jsp連接前端範例
+			sql="SELECT * FROM  product, love WHERE love.m_account='"+acc+"' AND love.p_id=product.p_id; ";
+			ResultSet tmp = con.createStatement().executeQuery(sql);
+            int count = 0;
+			while(tmp.next()){
+				out.print("<tr>");
+				out.print("<td class='goods'>"+"<a href='item.jsp?p_id="+tmp.getString("p_id")+"'/>"+"<img src='"+tmp.getString("p_image")+"'/>"+"<span>"+tmp.getString("p_name")+"</span>"+"</a>"+"</td>");
+				out.print("<td class='price'>"+tmp.getString("p_price")+"</td>");
+				out.print("<td>"+"<a href='add_shopping.jsp?p_id="+tmp.getString("p_id")+"&act=buy2&amount=1&outlink=2' />"+"加入購物車"+"</a>"+"</td>");
+				out.print("<td class='operation'>"+"<a href='del_favorite.jsp?love_id="+tmp.getString("love_id")+"'"+"<span class='delete'>"+"刪除"+"</span>"+"</a>"+"</td>");
+				out.print("</tr>");
+			}	
+	%>
+	
+	<!--
+		<tr>
+			<td class="checkbox"><input class="check-one check" type="checkbox"/></td>
+			<td class="goods"><img src="img/shoe1.jpg" alt=""/><span>鞋子一</span></td>
+			<td class="price">2500</td>
+			<td class="count">
+				<span class="reduce"></span>
+				<input class="count-input" type="text" value="1"/>
+				<span class="add">+</span>
+			</td>
+			<td class="subtotal">2500</td>
+			<td class="operation"><span class="delete">刪除</span></td>
+		</tr>
+		<tr>
+		    <td class="checkbox"><input class="check-one check" type="checkbox"/></td>
+		    <td class="goods"><img src="img/shoe4.jpg" alt=""/><span>鞋子二</span></td>
+		    <td class="price">3500</td>
+		    <td class="count"><span class="reduce"></span><input class="count-input" type="text" value="1"/><span class="add">+</span></td>
+		    <td class="subtotal">3500</td>
+			<td class="operation"><span class="delete">刪除</span></td>
+		</tr>
+		<tr>
+		    <td class="checkbox"><input class="check-one check" type="checkbox"/></td>
+		    <td class="goods"><img src="img/shoe9.jpg" alt=""/><span>鞋子三</span></td>
+		    <td class="price">2000</td>
+		    <td class="count"><span class="reduce"></span><input class="count-input" type="text" value="1"/><span class="add">+</span></td>
+		    <td class="subtotal">2000</td>
+		    <td class="operation"><span class="delete">刪除</span></td>
+		</tr>
+		<tr>
+		    <td class="checkbox"><input class="check-one check" type="checkbox"/></td>
+		    <td class="goods"><img src="img/shoe6.jpg" alt=""/><span>鞋子四</span></td>
+		    <td class="price">3000</td>
+		    <td class="count"><span class="reduce"></span><input class="count-input" type="text" value="1"/><span class="add">+</span></td>
+		    <td class="subtotal">3000</td>
+		    <td class="operation"><span class="delete">刪除</span></td>
+		</tr>
+	-->
  </tbody>
 </table>
 <div class="foot" id="foot">
@@ -217,7 +233,8 @@
   </div>
   <span class="arrow">◆<span>◆</span></span>
  </div>
-</div></center>
+</div>
+</center>
 <script>
 
 </script>
