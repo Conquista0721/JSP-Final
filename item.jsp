@@ -121,13 +121,13 @@
                 </ul>
             </li>
             
-				<li><a href="#">hello</a>
-					<ul>
-						<li><a href="personal information.jsp">個人資料</a></li>
-						<li><a href="#">我的收藏</a></li>
-						<li><a href="car.jsp">購物車</a></li>
-					</ul>
-				</li>
+			<li><a href="#">會員中心</a>
+				<ul>
+					<li><a href="personal information.jsp">個人資料</a></li>
+					<li><a href="#">我的收藏</a></li>
+					<li><a href="car.jsp">購物車</a></li>
+				</ul>
+			</li>
 					<li><a href="logout.jsp">登出</a>
 					
 				</li>
