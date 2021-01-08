@@ -15,6 +15,7 @@
 </head>
 <body class="bg">
     <div class="box"><a href="#">TOP</a></div>
+	<div class="bo"><a href="search.jsp">搜尋</a></div>
         <div id="menu"> 
             <a href="index.jsp"><img src="img/商標.png" class="img1"></a>
             <center>
