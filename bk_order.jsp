@@ -157,13 +157,13 @@ a
                             %>
                 <form action="write_order.jsp" method="post">
 <%
-                sql="SELECT * FROM shoppinglist;";
+                sql="select *, DATE_FORMAT(`date`, '%Y-%m-%d') as `date2` FROM jspfinal.shoppinglist;";
 				        ResultSet tmp=con.createStatement().executeQuery(sql);
                 while(tmp.next())
                 {
                   out.println("<tr>");
                   out.println("<td>"+"<textarea name='lid' readonly>"+tmp.getString("l_id")+"</textarea>"+"</td>");
-				  out.println("<td>"+"<textarea name='ldate'>"+tmp.getString("date")+"</textarea>"+"</td>");
+				   out.println("<td>"+"<input type='date' value='"+tmp.getString("date2")+"' name='ldate'>"+"</td>");
 				  out.println("<td>"+"<textarea name='pid'>"+tmp.getString("p_id")+"</textarea>"+"</td>");
                   out.println("<td>"+"<textarea name='maccount'>"+tmp.getString("m_account")+"</textarea>"+"</td>");
                   out.println("<td>"+"<textarea name='lnumber'>"+tmp.getString("l_number")+"</textarea>"+"</td>");

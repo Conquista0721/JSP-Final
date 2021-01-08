@@ -5,8 +5,7 @@
 <body>
 	<%
 		request.setCharacterEncoding("utf-8");
-		String [] mid=null;
-		String [] maccount=null;
+		String [] m_id=null;
 		String [] mpassword=null;
 		String [] mname=null;
 		String [] maddress=null;
@@ -15,8 +14,7 @@
 		String [] mhead=null;
 		String [] mphone=null;
 
-			mid=request.getParameterValues("mid");
-			maccount=request.getParameterValues("maccount");
+			m_id=request.getParameterValues("mid");
 			mpassword=request.getParameterValues("mpassword");
 			mname=request.getParameterValues("mname");
 		    maddress=request.getParameterValues("maddress");
@@ -24,11 +22,11 @@
 		    mlevel=request.getParameterValues("mlevel");
 		    mhead=request.getParameterValues("mhead");
 		    mphone=request.getParameterValues("mphone");
-			for(int i=0;i<mid.length;i++)
+			for(int i=0;i<m_id.length;i++)
 			{	
 			
-			sql="UPDATE member SET m_account='"+maccount[i]+"'m_password='"+mpassword[i]+"',m_name='"+mname[i]+"',m_address='"+maddress[i]+"',m_email='"+memail[i]+"',m_level='"+mlevel[i]+"',m_head='"+mhead[i]+"',m_phone='"+mphone[i]+"' WHERE m_id='"+mid[i]+"'";
-			con.createStatement().executeUpdate(sql); 
+			sql="UPDATE member SET m_password='"+mpassword[i]+"',m_name='"+mname[i]+"',m_address='"+maddress[i]+"',m_email='"+memail[i]+"',m_level='"+mlevel[i]+"',m_head='"+mhead[i]+"',m_phone='"+mphone[i]+"' WHERE m_id='"+m_id[i]+"'";
+			con.createStatement().execute(sql);
 			}
 			out.write("<script language=javascript>alert('修改成功');</script>");
 			response.setHeader("refresh","0;URL=bk_member.jsp");

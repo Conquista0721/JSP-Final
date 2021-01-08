@@ -155,13 +155,14 @@ a
                             %>
                 <form action="write_comment.jsp" method="post">
 <%
-                sql="SELECT * FROM shoppinglist;";
-				        ResultSet tmp=con.createStatement().executeQuery(sql);
+                sql="select *, DATE_FORMAT(`date`, '%Y-%m-%d') as `date2` FROM jspfinal.shoppinglist;";
+				ResultSet tmp=con.createStatement().executeQuery(sql);
                 while(tmp.next())
+			
                 {
                   out.println("<tr>");
                   out.println("<td>"+"<textarea name='lid' readonly>"+tmp.getString("l_id")+"</textarea>"+"</td>");
-                  out.println("<td>"+"<textarea name='date'>"+tmp.getString("date")+"</textarea>"+"</td>");
+                  out.println("<td>"+"<input type='date' value='"+tmp.getString("date2")+"' name='date'>"+"</td>");
                   out.println("<td>"+"<textarea name='pid'>"+tmp.getString("p_id")+"</textarea>"+"</td>");
                   out.println("<td>"+"<textarea name='lname'>"+tmp.getString("l_name")+"</textarea>"+"</td>");
                   out.println("<td>"+"<textarea name='message'>"+tmp.getString("message")+"</textarea>"+"</td>");
@@ -231,6 +232,10 @@ a
     <tr>
   	<td>評論內容(必填)</td>
   	<td colspan="2"><textarea style="width: 90%;" name="message"></textarea></td>
+  </tr>
+  <tr>
+  	<td>時間(必填)</td>
+  	<td colspan="2"><input type="date" style="width: 90%;" name="date"></td>
   </tr>
   <tr>
   <td colspan="3">
