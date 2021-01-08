@@ -163,9 +163,8 @@ a
                 while(tmp.next())
                 {
                   out.println("<tr>");
-                  out.println("<td>"+"<textarea name='pid' disabled='disabled'>"+tmp.getString("p_id")+"</textarea>"+"</td>");
+                  out.println("<td>"+"<textarea name='pid' >"+tmp.getString("p_id")+"</textarea>"+"</td>");
                   out.println("<td>"+"<textarea name='pclass'>"+tmp.getString("p_class")+"</textarea>"+"</td>");
-				  out.println("<td>"+"<textarea name='phot>"+tmp.getString("p_hot")+"</textarea>"+"</td>");
                   out.println("<td>"+"<textarea name='pname'>"+tmp.getString("p_name")+"</textarea>"+"</td>");
                   out.println("<td>"+"<textarea name='pstock'>"+tmp.getString("p_stock")+"</textarea>"+"</td>");
                   out.println("<td>"+"<textarea name='pprice'>"+tmp.getString("p_price")+"</textarea>"+"</td>");
@@ -178,7 +177,7 @@ a
                 }
                 out.println("<tr>");
                 out.println("<td colspan='10'>");
-                out.println("<button>");
+                out.println("<button type='submit'>");
                 out.println("修改商品");
                 out.println("</button>");
                 out.println("</td>");

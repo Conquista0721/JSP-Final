@@ -22,7 +22,7 @@
 		else 
 		{
 			
-			sql="INSERT INTO jspfinal.product(p_class,p_hot,p_name,p_stock,p_price,p_image,p_image2,p_image3,p_textarea) values('"+pclass+"','"+phot+"','"+pname+"','"+pstock+"','"+pprice+"','"+pimage+"','"+pimage2+"','"+pimage3+"','"+ptextarea+"');";
+			sql="INSERT INTO jspfinal.product(p_class,p_hot,p_name,p_stock,p_price,p_image,p_image2,p_image3,p_textarea) values('"+pclass+"','0','"+pname+"','"+pstock+"','"+pprice+"','"+pimage+"','"+pimage2+"','"+pimage3+"','"+ptextarea+"');";
             con.createStatement().execute(sql); 
 			out.write("<script language=javascript>alert('建立成功');</script>");
 			response.setHeader("refresh","0;URL=bk_product.jsp");
