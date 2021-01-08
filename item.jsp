@@ -221,7 +221,8 @@
 
 	<div>
         <h class="name">商品名稱:<%=pp.getString("p_name")%></h><br>
-        <h class="name2">價格:<%=pp.getString("p_price")%></h>
+        <h class="name2">價格:<%=pp.getString("p_price")%></h><br>
+		<h class="name2">庫存:<%=pp.getString("p_stock")%></h>
     </div>
 
 		<center>

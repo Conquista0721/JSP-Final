@@ -72,12 +72,8 @@
                 </ul>
             </li>
     
-            <li><a href="#">MEMBER</a>
-                <ul>
-                    <li><a href="personal information.jsp">個人資料</a></li>
-                    <li><a href="#">我的收藏</a></li>
-                    <li><a href="car.jsp">購物車</a></li>
-                </ul>
+            <li>
+				<a href="#">註冊</a>
             </li>
         </ul>
 			</center> 
@@ -96,6 +92,7 @@
 							
 							帳號:<input type="text" placeholder="輸入帳號" class="input" name="acc">
 							密碼:<input type="password" placeholder="輸入密碼" class="input" name="psd">
+							電子信箱:<input type="password" placeholder="輸入信箱" class="input" name="eml">
 							
 						<button class="buttt" type="submit"><img src="img/註冊.png" class="pc2" onclick="location.href='regis.jsp'">
 					</div>

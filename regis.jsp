@@ -9,9 +9,10 @@
 	    request.setCharacterEncoding("UTF-8");
 		String acc=request.getParameter("acc");
 		String pas=request.getParameter("psd");
-		if(acc==null||acc.equals("")||pas==null||pas.equals(""))
+		String eml=request.getParameter("eml");
+		if(acc==null||acc.equals("")||pas==null||pas.equals("")||eml==null||eml.equals(""))
 		{
-			out.write("<script language=javascript>alert('帳號、密碼輸入錯誤');</script>");
+			out.write("<script language=javascript>alert('帳號、密碼、信箱格式錯誤');</script>");
 			response.setHeader("refresh","0;URL=index.jsp");
 		}
 		else 
@@ -25,7 +26,7 @@
 			}
 			else
 			{
-				sql="INSERT INTO member(m_account,m_password,m_level,m_name,m_head) values('"+acc+"','"+pas+"','"+"0"+"','"+acc+"','"+"一般會員"+"');";
+				sql="INSERT INTO member(m_account,m_password,m_email,m_level,m_name,m_head) values('"+acc+"','"+pas+"','"+eml+"','"+"0"+"','"+acc+"','"+"一般會員"+"');";
 				con.createStatement().execute(sql);
 				out.write("<script language=javascript>alert('註冊成功');</script>");
 				response.setHeader("refresh","0;URL=index.jsp");

@@ -124,33 +124,34 @@
 		<div id="menu"> 
             <a href="index.jsp"><img src="img/商標.png" class="img1"></a>
             <center>
+			
 			<ul class="drop-down-menu">
-            <li><a href="#">ABOUT US</a>
-                <ul>
-                    <li><a href="about us.jsp">關於我們</a></li>
-                    <li><a href="about us.jsp">常見問題</a></li>
-                </ul>
-            </li>
-    
-            <li><a href="#">MENU</a>
-                <ul>
-                    <li><a href="commodity.jsp">熱門商品</a></li>
-                    <li><a href="commodity.jsp">休閒鞋款</a></li>
-                    <li><a href="commodity.jsp">籃球鞋款</a></li>
-                    <li><a href="commodity.jsp">慢跑鞋款</a></li>
-                </ul>
-            </li>
-            
-			<li><a href="#">會員中心</a>
-				<ul>
-					<li><a href="personal information.jsp">個人資料</a></li>
-					<li><a href="#">我的收藏</a></li>
-					<li><a href="car.jsp">購物車</a></li>
-				</ul>
-			</li>
-			<li>
-				<a href="logout.jsp">登出</a>
-			</li>
+				<li><a href="#">ABOUT US</a>
+					<ul>
+						<li><a href="about us.jsp">關於我們</a></li>
+						<li><a href="about us.jsp">常見問題</a></li>
+					</ul>
+				</li>
+		
+				<li><a href="#">MENU</a>
+					<ul>
+						<li><a href="commodity.jsp">熱門商品</a></li>
+						<li><a href="commodity.jsp">休閒鞋款</a></li>
+						<li><a href="commodity.jsp">籃球鞋款</a></li>
+						<li><a href="commodity.jsp">慢跑鞋款</a></li>
+					</ul>
+				</li>
+				
+				<li><a href="#">會員中心</a>
+					<ul>
+						<li><a href="personal information.jsp">個人資料</a></li>
+						<li><a href="#">我的收藏</a></li>
+						<li><a href="car.jsp">購物車</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="logout.jsp">登出</a>
+				</li>
 			</ul>
 			</center> 
 		</div>
