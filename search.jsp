@@ -174,8 +174,8 @@
 						out.println("<a href=>"+"<img src='"+tmp.getString("p_image")+"' class='img1' style='margin: 2rem 0 0rem 10%;width: 60%;height: 20%;' >"+"</a>");	
 						out.println("</td>");	
 						out.println("<td width='30%'>");	   
-						out.println("<a href>"+"<button type='submit' class'btn btn-primary' style='text-align: center;font-size: 0.8rem;margin: 2rem 0 2rem 16%;'>"+"<b>"+"加入購物車"+"</b>"+"</button>"+"</a>");	   
-						out.println("<a href>"+"<button type='submit' class='btn btn-primary' style='text-align: center;font-size: 0.8rem;'>"+"<b>"+"加入最愛"+"</b>"+"</button>"+"</a>");	
+						out.println("<a href='add_shopping.jsp?p_id="+tmp.getString("p_id")+"&act=buy2&amount=1&outlink=3' />"+"<button type='submit' class='btn btn-primary' style='text-align: center;font-size: 0.8rem;margin: 2rem 0 2rem 16%;'>"+"<b>"+"加入購物車"+"</b>"+"</button>"+"</a>");	   
+						out.println("<a href='add_shopping.jsp?p_id="+tmp.getString("p_id")+"&act=love2&amount=1&outlink=3'/>"+"<button type='submit' class='btn btn-primary' style='text-align: center;font-size: 0.8rem;'>"+"<b>"+"加入最愛"+"</b>"+"</button>"+"</a>");	
 						out.println("</td>");	
 						out.println("</tr>");			
 					}

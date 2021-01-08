@@ -129,6 +129,10 @@
         {
             out.println("<script>window.open('favorite.jsp','_self')</script>");
         }
+		else if(outlink.equals("3"))
+        {
+            out.println("<script>window.open('search.jsp','_self')</script>");
+        }
     }
     catch(Exception e)
     {
