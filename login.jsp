@@ -54,7 +54,7 @@
 	
 		<div class="b"> 
 			<center>
-				<img src="img/login.png" class="pc"><br><br><br>
+				<img src="img/login.png" class="pc">
 				<form action="tologin.jsp" method="post">
 					帳號:<br><br><input type="text" placeholder="輸入帳號" class="input" name="acc"><br>
 				

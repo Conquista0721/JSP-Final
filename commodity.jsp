@@ -45,6 +45,7 @@
 	%>
 
 		<div class="box"><a href="#">TOP</a></div>
+		<div class="search"><a href="#">S</a></div>
         <div id="menu"> 
             <a href="index.jsp"><img src="img/商標.png" class="img1"></a>
             <center>
@@ -147,34 +148,34 @@
 				}
 			}
 	%>
+		
+	<div class="centered">
+	
+		<center>
+			<h1>
+			<span>熱</span>
+			<span>門</span>
+			<span>商</span>
+			<span>品</span>
 
-  <div class="centered">
+			</br>
+			<span>p</span>
+			<span>o</span>
+			<span>p</span>
+			<span>u</span>
+			<span>l</span>
+			<span>a</span>
+			<span>r</span>
+		  </h1>
+		</center>
 
-    <center>
-      <h1>
-        <span>熱</span>
-        <span>門</span>
-        <span>商</span>
-        <span>品</span>
-
-        </br>
-        <span>p</span>
-        <span>o</span>
-        <span>p</span>
-        <span>u</span>
-        <span>l</span>
-        <span>a</span>
-        <span>r</span>
-      </h1>
-
-  </div>
+	</div>
 
   <div id="jogging">
 	  <%//jsp連接前端範例
 			sql="SELECT * FROM product order by p_hot desc limit 3; ";
 			PreparedStatement pstmt = con.prepareStatement(sql);
 			ResultSet rs=pstmt.executeQuery();
-			//先移到檔尾, getRow()後, 就可知道共有幾筆記錄
 			
 			while(rs.next()){
 				out.print("<div class='com'>");
@@ -227,7 +228,6 @@
 	<%//jsp連接前端範例
 			sql="SELECT DISTINCT p_image, p_class FROM product WHERE p_class='1'; ";
 			rs=pstmt.executeQuery(sql);
-			//先移到檔尾, getRow()後, 就可知道共有幾筆記錄
 			
 			while(rs.next()){
 				out.print("<div class='com'>");
@@ -286,7 +286,6 @@
 	<%//jsp連接前端範例
 			sql="SELECT DISTINCT p_image, p_class FROM product WHERE p_class='2'; ";
 			rs=pstmt.executeQuery(sql);
-			//先移到檔尾, getRow()後, 就可知道共有幾筆記錄
 			
 			while(rs.next()){
 				out.print("<div class='com'>");
@@ -346,7 +345,6 @@
 	<%//jsp連接前端範例
 			sql="SELECT DISTINCT p_image, p_class FROM product WHERE p_class='3'; ";
 			rs=pstmt.executeQuery(sql);
-			//先移到檔尾, getRow()後, 就可知道共有幾筆記錄
 			
 			while(rs.next()){
 				out.print("<div class='com'>");
