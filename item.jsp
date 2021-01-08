@@ -31,8 +31,32 @@
 
 </head>
 <body class="bg">
-     
-    <div class="box"><a href="#">TOP</a></div>
+    <%
+        String acc="";
+        String pas="";
+		//session.setAttribute("in",acc);the memory of the logged in account
+        try{
+                Cookie getC[]=request.getCookies();
+                for(int i=0;i<getC.length;i++)
+                {
+                    if(getC[i].getName().equals("getin"))
+                    {
+                        String[] sp=getC[i].getValue().split("-");
+                        acc=sp[0];
+                        pas=sp[1];
+                    }
+                }
+        
+            }
+        catch(Exception e)
+        {
+        
+        }
+		try{
+			if(acc==null||acc.equals("")||pas==null||pas.equals(""))
+		{
+	%>
+		<div class="box"><a href="#">TOP</a></div>
         <div id="menu"> 
             <a href="index.jsp"><img src="img/商標.png" class="img1"></a>
             <center>
@@ -70,12 +94,79 @@
 				</li>
 			</ul>
 			</center> 
-         </div>
+        </div>
+	<%
+		}
+		else
+		{
+	%>
+		<div class="box"><a href="#">TOP</a></div>
+		<div id="menu"> 
+            <a href="index.jsp"><img src="img/商標.png" class="img1"></a>
+            <center>
+			<ul class="drop-down-menu">
+            <li><a href="#">ABOUT US</a>
+                <ul>
+                    <li><a href="about us.jsp">關於我們</a></li>
+                    <li><a href="about us.jsp">常見問題</a></li>
+                </ul>
+            </li>
+    
+            <li><a href="#">MENU</a>
+                <ul>
+                    <li><a href="commodity.jsp">熱門商品</a></li>
+                    <li><a href="commodity.jsp">休閒鞋款</a></li>
+                    <li><a href="commodity.jsp">籃球鞋款</a></li>
+                    <li><a href="commodity.jsp">慢跑鞋款</a></li>
+                </ul>
+            </li>
+            
+				<li><a href="#">hello</a>
+					<ul>
+						<li><a href="personal information.jsp">個人資料</a></li>
+						<li><a href="#">我的收藏</a></li>
+						<li><a href="car.jsp">購物車</a></li>
+					</ul>
+				</li>
+					<li><a href="logout.jsp">登出</a>
+					
+				</li>
+				 </ul>
+			</center> 
+		</div>
+		
+		<%
+				}
+			}
+			catch(Exception e)
+			{
+				
+				//銷毁session：
+			 
+				//清除cookie：
+				try{
+						Cookie getC[]=request.getCookies();
+						for(int i=0;i<getC.length;i++)
+						{
+							if(getC[i].getName().equals("getin"))
+							{
+								getC[i].setMaxAge(0);
+								response.addCookie(getC[i]);
+								response.sendRedirect("index.jsp");
+							}
+						}
+					}
+				catch(Exception err)
+				{
+					response.sendRedirect("index.jsp");
+				}
+			}
+		%> 
+		
 
-
-         <br>
-         <br>
-         <br>
+        <br>
+        <br>
+        <br>
      <div class="divv2"><center>
 		
 		<%
@@ -133,44 +224,45 @@
         <h class="name2">價格:<%=pp.getString("p_price")%></h>
     </div>
 
-     <center>
-        <img src="img/選擇尺寸.png" class="size">
-  <div class="abgne-menu-20140101-1">
-    <input type="radio" id="8" name="sex">
-    <label for="8">8</label>
-    <input type="radio" id="8.5" name="sex">
-    <label for="8.5">8.5</label>
-    <input type="radio" id="9" name="sex">
-    <label for="9">9</label>
-    <input type="radio" id="9.5" name="sex">
-    <label for="9.5">9.5</label>
-    <input type="radio" id="10" name="sex">
-    <label for="10">10</label>
-    <input type="radio" id="10.5" name="sex">
-    <label for="10.5">10.5</label>
-    <input type="radio" id="11" name="sex">
-    <label for="11">11</label>
-    <input type="radio" id="11.5" name="sex">
-    <label for="11.5">11.5</label>
-  </div></center>
+		<center>
+			<img src="img/選擇尺寸.png" class="size">
+			<div class="abgne-menu-20140101-1">
+				<input type="radio" id="8" name="sex">
+				<label for="8">8</label>
+				<input type="radio" id="8.5" name="sex">
+				<label for="8.5">8.5</label>
+				<input type="radio" id="9" name="sex">
+				<label for="9">9</label>
+				<input type="radio" id="9.5" name="sex">
+				<label for="9.5">9.5</label>
+				<input type="radio" id="10" name="sex">
+				<label for="10">10</label>
+				<input type="radio" id="10.5" name="sex">
+				<label for="10.5">10.5</label>
+				<input type="radio" id="11" name="sex">
+				<label for="11">11</label>
+				<input type="radio" id="11.5" name="sex">
+				<label for="11.5">11.5</label>
+			</div>
+		</center>
 
-  <center>
-    <img src="img/選擇數量.png" class="size">
-<div class="abgne-menu-20140101-2">
-<input type="radio" id="1" name="math">
-<label for="1">1</label>
-<input type="radio" id="2" name="math">
-<label for="2">2</label>
-<input type="radio" id="3" name="math">
-<label for="3">3</label>
-<input type="radio" id="4" name="math">
-<label for="4">4</label>
-<input type="radio" id="5" name="math">
-<label for="5">5</label>
+		<center>
+			<img src="img/選擇數量.png" class="size">
+			<div class="abgne-menu-20140101-2">
+				<input type="radio" id="1" name="math">
+				<label for="1">1</label>
+				<input type="radio" id="2" name="math">
+				<label for="2">2</label>
+				<input type="radio" id="3" name="math">
+				<label for="3">3</label>
+				<input type="radio" id="4" name="math">
+				<label for="4">4</label>
+				<input type="radio" id="5" name="math">
+				<label for="5">5</label>
+			</div>
+		</center>
 
-</div></center>
-
-<center><button class="but"><img src="img/加入收藏.png" class="car"></button><button class="but"><img src="img/加入購物車.png" class="car"></button></center>
+	<center><button class="but"><img src="img/加入收藏.png" class="car"></button><button class="but"><img src="img/加入購物車.png" class="car"></button></center>
 
      <div class="border">
 		<h2><%=pp.getString("p_textarea")%></h2>

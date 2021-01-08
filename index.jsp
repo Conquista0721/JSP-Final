@@ -50,11 +50,11 @@
 		{
 	%>
     
-    <div class="box"><a href="#">TOP</a></div>
+		<div class="box"><a href="#">TOP</a></div>
         <div id="menu"> 
             <a href="index.jsp"><img src="img/商標.png" class="img1"></a>
             <center>
-        <ul class="drop-down-menu">
+			<ul class="drop-down-menu">
             <li><a href="#">ABOUT US</a>
                 <ul>
                     <li><a href="about us.jsp">關於我們</a></li>
@@ -77,16 +77,16 @@
                     <li><a href="register.jsp">註冊</a></li>
                 </ul>
             </li>
-			 </ul>
-       </center> 
+			</ul>
+			</center> 
          </div>
     <%
 		}
 		else
 		{
 	%>
-			<div class="box"><a href="#">TOP</a></div>
-			<div id="menu"> 
+		<div class="box"><a href="#">TOP</a></div>
+		<div id="menu"> 
             <a href="index.jsp"><img src="img/商標.png" class="img1"></a>
             <center>
 			<ul class="drop-down-menu">
@@ -117,35 +117,35 @@
 					
 				</li>
 				 </ul>
-       </center> 
-         </div>
+			</center> 
+		</div>
 	<%
+			}
 		}
-    }
-    catch(Exception e)
-    {
-        
-        //銷毁session：
-     
-        //清除cookie：
-        try{
-                Cookie getC[]=request.getCookies();
-                for(int i=0;i<getC.length;i++)
-                {
-                    if(getC[i].getName().equals("getin"))
-                    {
-                        getC[i].setMaxAge(0);
-                        response.addCookie(getC[i]);
-                        response.sendRedirect("index.jsp");
-                    }
-                }
-            }
-        catch(Exception err)
-        {
-            response.sendRedirect("index.jsp");
-        }
-    }
-%> 
+		catch(Exception e)
+		{
+			
+			//銷毁session：
+		 
+			//清除cookie：
+			try{
+					Cookie getC[]=request.getCookies();
+					for(int i=0;i<getC.length;i++)
+					{
+						if(getC[i].getName().equals("getin"))
+						{
+							getC[i].setMaxAge(0);
+							response.addCookie(getC[i]);
+							response.sendRedirect("index.jsp");
+						}
+					}
+				}
+			catch(Exception err)
+			{
+				response.sendRedirect("index.jsp");
+			}
+		}
+	%> 
        
 <br>
 <br>
