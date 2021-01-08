@@ -62,7 +62,7 @@
 				<button class="buttt" type="submit"><img src="img/登入.png" class="pc2"></button>
 			</form>
 			<a href="register.jsp"><button class="buttt"><img src="img/註冊.png" class="pc2"></button></a>
-			<button class="buttt"><img src="img/忘記密碼.png" class="pc3"></button>
+			<!-- <button class="buttt"><img src="img/忘記密碼.png" class="pc3"></button> -->
 			</center>
 		</div>
 	

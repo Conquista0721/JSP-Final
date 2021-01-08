@@ -19,7 +19,7 @@
     {
         alert("感謝您的購買！本店產品皆是貨到付款，請耐心等候到貨通知~");
     }
-    </script>
+</script>
 <script src="js/clock.js"></script>
 <script src="js/car.js"></script>
 

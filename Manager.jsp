@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>首頁</title>
+    <title>管理者介面</title>
 
     <style type="text/css">
         @import"css/manager.css";
@@ -23,7 +23,7 @@
 <body class="bg">
     <div class="box"><a href="#">TOP</a></div>
     <div id="menu"> 
-        <img src="img/商標.png" class="img1">
+        <a href="index.jsp"><img src="img/商標.png" class="img1"></a>
         <center>
 			<ul class="drop-down-menu">
 				<li><a href="#">ABOUT US</a>

@@ -20,7 +20,7 @@
 
 <script>
     
-    </script> 
+</script> 
 </head>
 
 <body class="bg">
