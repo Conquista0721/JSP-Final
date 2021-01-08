@@ -4,33 +4,14 @@
 <%@ include file="getDB.jsp"%>
 
 <%
-	String l_memo = request.getParameter("comment");
-	String l_idd = request.getParameter("lidd");
-	String p_id = request.getParameter("pid");
-	String acc = "";
-	String pas = "";
-	try{
-                Cookie getC[]=request.getCookies();
-                for(int i=0;i<getC.length;i++)
-                {
-                    if(getC[i].getName().equals("getin"))
-                    {
-                        String[] sp=getC[i].getValue().split("-");
-                        acc=sp[0];
-                        pas=sp[1];
-                    }
-                }
-            }
-        catch(Exception e)
-        {}
+	String msg = request.getParameter("message");
+	String acc = request.getParameter("acc");
+	String pid = request.getParameter("pid");
 
-%>
-
-<%
-    sql="update list_shopping set l_boolean='1',message='"+l_memo+"' where l_idd='"+l_idd+"' and p_id='"+p_id+"'";
+    sql="INSERT INTO message(p_id, m_account, message) values('"+pid+"','"+acc+"','"+msg+"');";
   	con.createStatement().execute(sql);
   	out.println("<script language=javascript>alert('評論成功')</script>");
-  	response.setHeader("refresh","0;URL=member.jsp");
+    response.setHeader("refresh","0;URL=item.jsp?p_id="+pid+"");
 %>
     
  
