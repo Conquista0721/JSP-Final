@@ -80,6 +80,9 @@ a
                     <li><a href="personal information.jsp">個人資料</a></li>
                 </ul>
             </li>
+			<li>
+				<a href="logout.jsp">登出</a>
+			</li>
         </ul>
        </center> 
          </div>

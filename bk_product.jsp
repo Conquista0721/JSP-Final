@@ -55,7 +55,7 @@ a
 <script src="js/home.js"></script>
 </head>
 <body class="bg">
-<div id="menu"> 
+	<div id="menu"> 
             <a href="index.jsp"><img src="img/商標.png" class="img1"></a>
             <center>
         <ul class="drop-down-menu">
@@ -80,9 +80,12 @@ a
                     <li><a href="personal information.jsp">個人資料</a></li>
                 </ul>
             </li>
+			<li>
+				<a href="logout.jsp">登出</a>
+			</li>
         </ul>
        </center> 
-         </div>
+    </div>
 <center style="padding:2%; padding-bottom: 10%;padding-top: 10%;"><table border="1" class="out">
 	<tr>
 		<td><center><a href="bk_index.jsp">管理者介面</a></center></td>
