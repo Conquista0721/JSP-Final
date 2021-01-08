@@ -21,7 +21,66 @@
 </head>
 
 <body class="bg">
+	<%
+        String acc="";
+        String pas="";
+		//session.setAttribute("in",acc);the memory of the logged in account
+        try{
+                Cookie getC[]=request.getCookies();
+                for(int i=0;i<getC.length;i++)
+                {
+                    if(getC[i].getName().equals("getin"))
+                    {
+                        String[] sp=getC[i].getValue().split("-");
+                        acc=sp[0];
+                        pas=sp[1];
+                    }
+                }
+        
+            }
+        catch(Exception e)
+        {
+        
+        }
+		try{
+			if(acc==null||acc.equals("")||pas==null||pas.equals(""))
+		{
+	%>
     <div class="box"><a href="#">TOP</a></div>
+    <div id="menu"> 
+        <a href="index.jsp"><img src="img/商標.png" class="img1"></a>
+        <center>
+			<ul class="drop-down-menu">
+				<li><a href="#">ABOUT US</a>
+					<ul>
+						<li><a href="about us.jsp">關於我們</a></li>
+						<li><a href="about us.jsp">常見問題</a></li>
+					</ul>
+				</li>
+
+				<li><a href="#">MENU</a>
+					<ul>
+						<li><a href="commodity.jsp">熱門商品</a></li>
+						<li><a href="commodity.jsp">休閒鞋款</a></li>
+						<li><a href="commodity.jsp">籃球鞋款</a></li>
+						<li><a href="commodity.jsp">慢跑鞋款</a></li>
+					</ul>
+				</li>
+				<li><a href="#">LOGIN</a>
+                <ul>
+                    <li><a href="login.jsp">登入</a></li>
+                    <li><a href="register.jsp">註冊</a></li>
+                </ul>
+				</li>
+			</ul>
+		</center> 
+    </div>
+	<%
+		}
+		else
+		{
+	%>
+	<div class="box"><a href="#">TOP</a></div>
     <div id="menu"> 
         <a href="index.jsp"><img src="img/商標.png" class="img1"></a>
         <center>
@@ -47,6 +106,34 @@
 			</ul>
 		</center> 
     </div>
+	<%
+			}
+		}
+		catch(Exception e)
+		{
+			
+			//銷毁session：
+		 
+			//清除cookie：
+			try{
+					Cookie getC[]=request.getCookies();
+					for(int i=0;i<getC.length;i++)
+					{
+						if(getC[i].getName().equals("getin"))
+						{
+							getC[i].setMaxAge(0);
+							response.addCookie(getC[i]);
+							response.sendRedirect("index.jsp");
+						}
+					}
+				}
+			catch(Exception err)
+			{
+				response.sendRedirect("index.jsp");
+			}
+		}
+	%> 
+	
         <div class="content">
             <table width="50%" style="margin-top: 6rem;margin-bottom: 6rem;">
                 <thead>
