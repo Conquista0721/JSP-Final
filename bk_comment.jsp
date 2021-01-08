@@ -85,7 +85,7 @@ a
 					<td>評論日期</td>
 					<td>商品編號</td>
 					<td>留言人名</td>
-					<td>評論內容</td>
+					<td>訂單備註</td>
 					<td>刪除</td>
 				</tr>
 				 <%
@@ -217,7 +217,7 @@ a
   	<td colspan="2"><textarea style="width: 90%;" name="lname"></textarea></td>
   </tr>
     <tr>
-  	<td>評論內容(必填)</td>
+  	<td>訂單備註(必填)</td>
   	<td colspan="2"><textarea style="width: 90%;" name="message"></textarea></td>
   </tr>
   <tr>

@@ -4,6 +4,7 @@
 <%@ include file="getDB.jsp"%>
 
 <%
+	request.setCharacterEncoding("utf-8");
 	String msg = request.getParameter("message");
 	String acc = request.getParameter("acc");
 	String pid = request.getParameter("pid");
