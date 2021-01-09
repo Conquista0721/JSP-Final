@@ -111,13 +111,22 @@ a
 		<td><a href="bk_comment.jsp">評論管理</a></td>
 	</tr>
 	<tr>
-	<td><a href="bk_comment.jsp">個人介紹1</a></td>
+	<td colspan="2" ><p style="font-size:40px">管理階層</p>
+	</td>
 	</tr>
 	<tr>
-	<td><a href="bk_comment.jsp">個人介紹2</a></td>
+	<td><img src="img/1.jpg" width="100%" style="display: block;"></td>
+	<td style="font-size:90px">許柏聰<br>是一名帥哥兼馬子狗</td>
 	</tr>
 	<tr>
-	<td><a href="bk_comment.jsp">個人介紹3</a></td>
+	<td><img src="img/22.png" width="100%" style="display: block;"></td>
+		<td style="font-size:90px">董謙<br>呼吸.....好麻煩歐</td>
+
+	</tr>
+	<tr>
+	<td><img src="img/333.jpg" width="100%" style="display: block;"></td>
+	<td style="font-size:90px">杜得瑋<br>TALE OFF!!</td>
+
 	</tr>
 	
 </table></center>

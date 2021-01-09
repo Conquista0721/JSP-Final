@@ -56,14 +56,14 @@
             <a href="index.jsp"><img src="img/商標.png" class="img1"></a>
             <center>
 			<ul class="drop-down-menu">
-            <li><a href="#">ABOUT US</a>
+            <li><a href="about us.jsp">ABOUT US</a>
                 <ul>
                     <li><a href="about us.jsp">關於我們</a></li>
                     <li><a href="about us.jsp">常見問題</a></li>
                 </ul>
             </li>
     
-            <li><a href="#">MENU</a>
+            <li><a href="commodity.jsp">MENU</a>
                 <ul>
                     <li><a href="commodity.jsp">熱門商品</a></li>
                     <li><a href="commodity.jsp">休閒鞋款</a></li>

@@ -83,7 +83,7 @@
 					<img src="img/line.png">
 				</div>
 				<form action="regis.jsp" method="post">
-					<div class="word">
+					<div  style="p"class="word">
 						<img src="img/填寫資料.png" class="pc4">
 						<br>
 							
@@ -96,7 +96,13 @@
 				</form>
 			</center>
 
-
+		<div>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		</div>
 		<center>
 		<div class="bgg">
 			<p>瀏覽人數:

@@ -93,8 +93,8 @@
 				<ul class="drop-down-menu">
 				<li><a href="#">ABOUT US</a>
 					<ul>
-						<li><a href="about us.jsp">關於我們</a></li>
-						<li><a href="about us.jsp">常見問題</a></li>
+						<li><a href="about us.jsp#mark5">關於我們</a></li>
+						<li><a href="about us.jsp#mark6">常見問題</a></li>
 					</ul>
 				</li>
 		
@@ -127,8 +127,8 @@
 			<ul class="drop-down-menu">
 				<li><a href="#">ABOUT US</a>
 					<ul>
-						<li><a href="about us.jsp">關於我們</a></li>
-						<li><a href="about us.jsp">常見問題</a></li>
+						<li><a href="about us.jsp#mark5">關於我們</a></li>
+						<li><a href="about us.jsp#mark6">常見問題</a></li>
 					</ul>
 				</li>
 		
