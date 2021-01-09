@@ -185,7 +185,7 @@
 
 
     <div>
-		<img src="img/愛迪達.webp" class="pc">
+		<img src="img/愛迪達.webp" class="pc" id="mark5">
     </div>
     <div class="div"></div>
 
@@ -207,7 +207,7 @@
 
 
 
-<div class="ques3">
+<div class="ques3" id="mark6">
     <div>
         <FORM action="" method=POST id=form1 name=form1 class="ques">
         <br>

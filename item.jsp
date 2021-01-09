@@ -17,6 +17,10 @@
         @import"css/item.css";
         @import"css/buttom.css";
         @import"css/score.css";
+		.pcc{
+		height: 400px;
+  width: 400px;
+		}
        </style>
 
 <script src="js/clock.js"></script>
@@ -177,13 +181,13 @@
                 <input type="radio" name="slides" id="slides_4" />
                 <ul>
                     <li>
-                        <img src="<%=pp.getString("p_image")%>">
+                        <img src="<%=pp.getString("p_image")%>"class="pcc">
                     </li>
                     <li>
-                        <img src="<%=pp.getString("p_image2")%>" />
+                        <img src="<%=pp.getString("p_image2")%>"class="pcc" />
                     </li>
                     <li>
-                        <img src="<%=pp.getString("p_image3")%>">
+                        <img src="<%=pp.getString("p_image3")%>"class="pcc">
                     </li>
 
                 </ul>
@@ -317,7 +321,7 @@
 		  %><br>
           <center>
           
-			<div class="scoreEvaluation">
+		<div class="scoreEvaluation">
 
 				<div class="title"></div>
 				
@@ -368,10 +372,6 @@
 				%>
 			</div>
 	</div>
-
-
-
-
 
 
 

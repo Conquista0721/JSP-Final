@@ -1,3 +1,10 @@
+
+ .pcc{
+  height: 400px;
+  width: 400px;
+}
+
+
 .csslider {
     -moz-perspective: 1300px;
     -ms-perspective: 1300px;

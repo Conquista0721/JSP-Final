@@ -16,19 +16,26 @@
 }
 
 .word2{
-    margin-left: 8%;
-    margin-bottom: 40%;
+   
+    
 }
 
-.user ,.discuss{
+.user{
     font-size: 20px;
-    padding: 10px;
     background-color: #f7aa92b4;
     height: 400px;
     width: 35%;
     margin-left: 100px;
     margin-bottom: 100px;
-    float: left;
+
+}
+.discuss{
+font-size: 20px;
+background-color: #f7aa92b4;
+    height: 400px;
+    width: 35%;
+    margin-left: 100px;
+    margin-bottom: 100px;
 }
 
 .userImg{

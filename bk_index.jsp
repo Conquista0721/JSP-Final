@@ -110,6 +110,16 @@ a
 	<tr>
 		<td><a href="bk_comment.jsp">評論管理</a></td>
 	</tr>
+	<tr>
+	<td><a href="bk_comment.jsp">個人介紹1</a></td>
+	</tr>
+	<tr>
+	<td><a href="bk_comment.jsp">個人介紹2</a></td>
+	</tr>
+	<tr>
+	<td><a href="bk_comment.jsp">個人介紹3</a></td>
+	</tr>
+	
 </table></center>
 
 </body>

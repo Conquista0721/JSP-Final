@@ -52,17 +52,17 @@
         <ul class="drop-down-menu">
             <li><a href="#">ABOUT US</a>
                 <ul>
-                    <li><a href="about us.jsp">關於我們</a></li>
-                    <li><a href="about us.jsp">常見問題</a></li>
+                    <li><a href="about us.jsp#mark5">關於我們</a></li>
+                    <li><a href="about us.jsp#mark">常見問題</a></li>
                 </ul>
             </li>
     
             <li><a href="#">MENU</a>
                 <ul>
-                    <li><a href="commodity.jsp">熱門商品</a></li>
-                    <li><a href="commodity.jsp">休閒鞋款</a></li>
-                    <li><a href="commodity.jsp">籃球鞋款</a></li>
-                    <li><a href="commodity.jsp">慢跑鞋款</a></li>
+                    <li><a href="commodity.jsp#mark1">熱門商品</a></li>
+                    <li><a href="commodity.jsp#mark2">休閒鞋款</a></li>
+                    <li><a href="commodity.jsp#mark3">籃球鞋款</a></li>
+                    <li><a href="commodity.jsp#mark4">慢跑鞋款</a></li>
                 </ul>
             </li>
     
@@ -90,17 +90,17 @@
 			<ul class="drop-down-menu">
             <li><a href="#">ABOUT US</a>
                 <ul>
-                    <li><a href="about us.jsp">關於我們</a></li>
-                    <li><a href="about us.jsp">常見問題</a></li>
+                    <li><a href="about us.jsp#mark5">關於我們</a></li>
+                    <li><a href="about us.jsp#mark">常見問題</a></li>
                 </ul>
             </li>
     
             <li><a href="#">MENU</a>
                 <ul>
-                    <li><a href="commodity.jsp">熱門商品</a></li>
-                    <li><a href="commodity.jsp">休閒鞋款</a></li>
-                    <li><a href="commodity.jsp">籃球鞋款</a></li>
-                    <li><a href="commodity.jsp">慢跑鞋款</a></li>
+                    <li><a href="commodity.jsp#mark1">熱門商品</a></li>
+                    <li><a href="commodity.jsp#mark2">休閒鞋款</a></li>
+                    <li><a href="commodity.jsp#mark3">籃球鞋款</a></li>
+                    <li><a href="commodity.jsp#mark4">慢跑鞋款</a></li>
                 </ul>
             </li>
             
@@ -146,7 +146,7 @@
 			}
 	%>
 		
-	<div class="centered">
+	<div class="centered" id="mark1">
 	
 		<center>
 			<h1>
@@ -199,8 +199,21 @@
 	-->
 
   </div>
-
-  <div class="centered">
+<div> 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+  <div class="centered"id="mark2">
 
     <center>
       <h1>
@@ -249,8 +262,21 @@
     </div>
   -->
   </div>
-
-  <div class="centered">
+<div> 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+  <div class="centered"id="mark3">
 
     <center>
       <h1>
@@ -308,9 +334,22 @@
   -->
   </div>
 
+<div> 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
 
-
-  <div class="centered">
+  <div class="centered" id="mark4">
 
 
     <center>
